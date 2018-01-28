@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 
 data = [
+	{ Menu}
 ]
 
 class OrderFrame extends Component {
