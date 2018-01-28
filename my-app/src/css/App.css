@@ -10,9 +10,31 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
 
 .App-intro {
   font-size: large;
+}
+
+.App-footer {
+  background-color: #222;
+  height: 50px;
+  padding: 20px;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: 1em;
+}
+
+.menu-title {
+  font-size: 1.75em;
+}
+
+.menu-selection {
+  border-color: black;
 }
