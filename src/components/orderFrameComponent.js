@@ -10,22 +10,27 @@ class OrderFrame extends Component {
     super(props);
 
     this.state = MenuItems;
-      
+
+    this.state.orderItems = [];
   };
 
   render() {
 
     return (
-      <div class="OrderFrame">
+      <div className="OrderFrame">
         <p className="menu-title">
           Menu Selection
         </p>
 
         <div>
           {this.state.menuItems.map(item =>
-            <MenuSelection itemTitle={item.itemTitle} itemDescription={item.itemDescription} />
+            <MenuSelection itemTitle={item.itemTitle} 
+            itemDescription={item.itemDescription}
+            key={item.id}/>
           )}
         </div>
+
+        <br/>
       </div>
     );
 

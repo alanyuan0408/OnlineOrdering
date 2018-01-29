@@ -12,7 +12,6 @@ class MenuSelection extends Component {
       itemDescription: props.itemDescription,
       numberSelected: 0
     };
-
   };
 
   render() {
@@ -20,6 +19,10 @@ class MenuSelection extends Component {
       <div className="menu-selection">
         <h3>{this.state.itemTitle}</h3>
         <p>{this.state.itemDescription}</p>
+        <input placeholder="Quantity" 
+          defaultValue={this.state.numberSelected}
+          type="number" step="0" min="0" max="20"/>
+        <button type="button">Place Order </button>
       </div>
     );
   }
