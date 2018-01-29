@@ -3,6 +3,7 @@ import '../css/App.css';
 
 class AppHeader extends Component {
 
+  // Header Component, top bar of the app
   render() {
     return (
         <header className="App-header">

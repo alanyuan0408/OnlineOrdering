@@ -5,6 +5,8 @@ import AppFooter from './appFooterComponent'
 import AppHeader from './appHeaderComponent'
 
 class App extends Component {
+  // Base App Component that contains the Order Frame,
+  // Header and Footer Components
   constructor(props) {
     super(props);
 

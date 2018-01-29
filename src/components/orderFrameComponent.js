@@ -1,38 +1,32 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-
-data = [
-	{ Menu}
-]
+import MenuItems from '../assets/orderItems';
+import MenuSelection from './menuSelectionComponent';
 
 class OrderFrame extends Component {
+
+  // Main Selection Frame for listing the Items
   constructor(props) {
     super(props);
 
     this.state = {
-      itemTitle: "",
-      itemDescription: "",
-      menuItems: []
+      menuItems: MenuItems
     };
 
-  	this.addMenuItem = this.addMenuItem.bind(this);
+    console.log(typeof(this.state.menuItems));
 
   };
 
-  addMenuItem(Item){
-    var myItems = this.state.menuItems;
-    myItems.push(Item)
-    this.setState({menuItems: myItems})
-  }
-
   render() {
+
     return (
+      <div>
         <p className="menu-title">
           Menu Selection
         </p>
-
-
+      </div>
     );
+
   }
 }
 
