@@ -37,4 +37,12 @@
 
 .menu-selection {
   border-color: black;
+  width: 30vw;
+  left: 35vw;
+  position: relative;
+}
+
+.OrderFrame {
+  height: calc(100vh - 190px);
+  overflow-y: scroll;
 }

@@ -9,21 +9,23 @@ class OrderFrame extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      menuItems: MenuItems
-    };
-
-    console.log(typeof(this.state.menuItems));
-
+    this.state = MenuItems;
+      
   };
 
   render() {
 
     return (
-      <div>
+      <div class="OrderFrame">
         <p className="menu-title">
           Menu Selection
         </p>
+
+        <div>
+          {this.state.menuItems.map(item =>
+            <MenuSelection itemTitle={item.itemTitle} itemDescription={item.itemDescription} />
+          )}
+        </div>
       </div>
     );
 

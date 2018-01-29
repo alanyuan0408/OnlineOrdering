@@ -10,14 +10,15 @@ class MenuSelection extends Component {
     this.state = {
       itemTitle: props.itemTitle,
       itemDescription: props.itemDescription,
+      numberSelected: 0
     };
 
   };
 
   render() {
     return (
-      <div>
-        <p className="menu-title">{this.state.itemTitle}</p>
+      <div className="menu-selection">
+        <h3>{this.state.itemTitle}</h3>
         <p>{this.state.itemDescription}</p>
       </div>
     );

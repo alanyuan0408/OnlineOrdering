@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <AppHeader headerTitle ="Online Ordering"/>
+        <AppHeader headerTitle ="Online Ordering App"/>
 
         <OrderFrame/>
 
