@@ -14,12 +14,32 @@ class OrderFrame extends Component {
     this.state.orderItems = [];
 
     this.parentCallBack = this.parentCallBack.bind(this);
+    this.updateItem = this.updateItem.bind(this);
   };
 
   parentCallBack(dataFromChild) {
-    let tempArray = this.state.orderItems;
-    tempArray.push(dataFromChild);
-    this.setState({orderItems: tempArray});
+    var rtrArray = this.updateItem(dataFromChild);
+    this.setState({orderItems: rtrArray});
+  }
+
+  updateItem(newItem) {
+    var newArray = [];
+    if (this.state.orderItems.length == 0){
+      newArray.push(newItem);
+
+      return newArray;
+    }
+
+    for (var element in this.state.orderItems){
+      if (element.title == newItem.itemTitle){
+        console.log(newItem);
+        newArray.push(newItem);
+      } else {
+        console.log(element);
+        newArray.push(element);
+      }
+    }
+    return newArray;
   }
 
   render() {
