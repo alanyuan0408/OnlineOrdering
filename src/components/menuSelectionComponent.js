@@ -10,8 +10,27 @@ class MenuSelection extends Component {
     this.state = {
       itemTitle: props.itemTitle,
       itemDescription: props.itemDescription,
-      numberSelected: 0
+      numberSelected: 0,
+      defaultValue: 0,
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.parentCallBack = this.parentCallBack.bind(this);
+  };
+
+  parentCallBack(){
+    if (this.state.numberSelected > 0) {
+      var orderPackage = {};
+      orderPackage.title = this.state.itemTitle;
+      orderPackage.quantity = this.state.numberSelected;
+      orderPackage.keyValue = this.state.keyValue;
+
+      this.props.callbackFromParent(orderPackage);
+    }
+  };
+
+  handleChange(e){
+    this.setState({numberSelected: e.target.value})
   };
 
   render() {
@@ -20,9 +39,11 @@ class MenuSelection extends Component {
         <h3>{this.state.itemTitle}</h3>
         <p>{this.state.itemDescription}</p>
         <input placeholder="Quantity" 
-          defaultValue={this.state.numberSelected}
-          type="number" step="0" min="0" max="20"/>
-        <button type="button">Place Order </button>
+          defaultValue={this.state.defaultValue}
+          type="number" step="1" min="0" max="20"
+          value={this.state.numberSelected}
+          onChange={this.handleChange}/>
+        <button onClick = {this.parentCallBack}>Place Order </button>
       </div>
     );
   }
