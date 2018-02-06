@@ -19,14 +19,12 @@ class MenuSelection extends Component {
   };
 
   parentCallBack(){
-    if (this.state.numberSelected > 0) {
-      var orderPackage = {};
-      orderPackage.title = this.state.itemTitle;
-      orderPackage.quantity = this.state.numberSelected;
-      orderPackage.keyValue = this.state.keyValue;
+    var orderPackage = {};
+    orderPackage.id = Math.floor(Math.random() * 2000);
+    orderPackage.title = this.state.itemTitle;
+    orderPackage.quantity = this.state.numberSelected;
 
-      this.props.callbackFromParent(orderPackage);
-    }
+    this.props.callbackFromParent(orderPackage);
   };
 
   handleChange(e){
