@@ -41,7 +41,9 @@ class OrderFrame extends Component {
       }
 
       if (!modified){
-        new_array.push(dataFromChild);
+        if (dataFromChild.quantity > 0){
+          new_array.push(dataFromChild);
+        }
       }
 
     }
