@@ -51,7 +51,6 @@ class OrderFrame extends Component {
   }
 
   render() {
-
     return (
       <div className="OrderFrame">
         <p className="menu-title">
