@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import '../css/App.css';
 import MenuItems from '../assets/orderItems';
 import MenuSelection from './menuSelectionComponent';
 import SelectedOrder from './selectedOrderComponent';
+
+var gatewayURl = "https://3t34qsne28.execute-api.us-east-2.amazonaws.com/AlanStage"
 
 class OrderFrame extends Component {
 
@@ -14,7 +17,15 @@ class OrderFrame extends Component {
     this.state.orderItems = [];
 
     this.parentCallBack = this.parentCallBack.bind(this);
+    this.sendOrder = this.sendOrder.bind(this);
   };
+
+  sendOrder(){
+    axios.post(gatewayURl).then(function(response) {
+      console.log(response);
+      console.log("Send Response");
+    });
+  }
 
   parentCallBack(dataFromChild) {
     var new_array = []
@@ -63,6 +74,8 @@ class OrderFrame extends Component {
             quantity={item.quantity}
             key={item.id}/>
           )}
+          <br/>
+          <button onClick= {this.sendOrder}>Send Order</button>
         </div>
 
         <div>

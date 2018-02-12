@@ -41,7 +41,7 @@ class MenuSelection extends Component {
           type="number" step="1" min="0" max="20"
           value={this.state.numberSelected}
           onChange={this.handleChange}/>
-        <button onClick = {this.parentCallBack}>Place Order </button>
+        <button onClick={this.parentCallBack}>Place Order </button>
       </div>
     );
   }

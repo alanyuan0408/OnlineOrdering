@@ -234,6 +234,7 @@ paths:
     requestTemplates: 
      "application/json": "{\"statusCode\": 200}"
     type: mock
+    
 definitions: 
  Pets: 
   type: array
