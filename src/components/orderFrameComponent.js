@@ -5,7 +5,7 @@ import MenuItems from '../assets/orderItems';
 import MenuSelection from './menuSelectionComponent';
 import SelectedOrder from './selectedOrderComponent';
 
-var gatewayURl = "https://3t34qsne28.execute-api.us-east-2.amazonaws.com/AlanStage"
+var gatewayURl = "https://3t34qsne28.execute-api.us-east-2.amazonaws.com/AlanStage/"
 
 class OrderFrame extends Component {
 
@@ -24,14 +24,16 @@ class OrderFrame extends Component {
     axios.post(gatewayURl).then(function(response) {
       console.log(response);
       console.log("Send Response");
-    });
+    }).catch(function(error) {
+      console.log(error);
+    })
   }
 
   parentCallBack(dataFromChild) {
     var new_array = []
     var array = this.state.orderItems;
 
-    if (array.length == 0){
+    if (array.length === 0){
       if (dataFromChild.quantity > 0){
         new_array.push(dataFromChild);
       }
@@ -39,12 +41,12 @@ class OrderFrame extends Component {
     } else {
       var modified = false;
       for (var item = 0; item < array.length; item++){
-        if (array[item].title == dataFromChild.title){
+        if (array[item].title === dataFromChild.title){
           // Case we are updating the array
           if (dataFromChild.quantity > 0){
             new_array.push(dataFromChild);
           }
-          var modified = true;
+          modified = true;
         } else {
           var newItem = array[item]
           new_array.push(newItem);
