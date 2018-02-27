@@ -5,7 +5,7 @@ import MenuItems from '../assets/orderItems';
 import MenuSelection from './menuSelectionComponent';
 import SelectedOrder from './selectedOrderComponent';
 
-var gatewayURl = "https://3t34qsne28.execute-api.us-east-2.amazonaws.com/AlanStage/"
+var gatewayURl = "https://0duaks4h16.execute-api.us-east-2.amazonaws.com/prod/"
 
 class OrderFrame extends Component {
 
