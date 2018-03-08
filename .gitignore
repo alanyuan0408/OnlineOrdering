@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/aws/Lambda/node_modules
+/aws/Lambda/customers/node_modules
+/aws/Lambda/orders/node_modules
 
 # testing
 /coverage
