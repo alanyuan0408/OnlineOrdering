@@ -58,7 +58,7 @@ Resources:
   CustomerLambda:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./customers
+      CodeUri: ./customers-lambda
       Handler: lambda.handler
       MemorySize: 1024
       Role: !GetAtt LambdaExecutionRole.Arn
@@ -97,7 +97,7 @@ Resources:
   OrderLambda:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./orders
+      CodeUri: ./orders-lambda
       Handler: lambda.handler
       MemorySize: 1024
       Role: !GetAtt LambdaExecutionRole.Arn

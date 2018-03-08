@@ -48,7 +48,7 @@ Resources:
     Type: AWS::Serverless::Api
   CustomerLambda:
     Properties:
-      CodeUri: s3://alanbucket-123123123/bb197da48e902882f6d9f00f08b1aaf0
+      CodeUri: s3://alanbucket-123123123/ac718e278281e372c9134f733fe4cde5
       Events:
         ProxyApiGreedy:
           Properties:
@@ -120,7 +120,7 @@ Resources:
     Type: AWS::IAM::Role
   OrderLambda:
     Properties:
-      CodeUri: s3://alanbucket-123123123/ed792575434a3f3164fddcacce1d0b44
+      CodeUri: s3://alanbucket-123123123/0264de09a4f652da996446430f3ca3ec
       Events:
         ProxyApiGreedy:
           Properties:

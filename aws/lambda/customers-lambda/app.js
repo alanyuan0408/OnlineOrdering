@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(awsServerlessExpressMiddleware.eventContext())
 
 app.post('/customers', (req, res) => {
-  res.status(201).send("We hit the lambda");
+  res.status(201).send("We hit the lambda!!!");
 })
 // The aws-serverless-express library creates a server and listens on a Unix
 // Domain Socket for you, so you can remove the usual call to app.listen.
