@@ -1,0 +1,26 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Serverless Dynamo tables
+Resources:
+  CustomerDynamoDBTable: 
+    Type: "AWS::DynamoDB::Table"
+    Properties: 
+      AttributeDefinitions:
+        - 
+          AttributeName: "CustomerID"
+          AttributeType: "S"
+      KeySchema: 
+        - 
+          AttributeName: "CustomerID"
+          KeyType: "HASH"
+      ProvisionedThroughput: 
+        ReadCapacityUnits: "5"
+        WriteCapacityUnits: "5"
+
+Outputs:
+  CustomerDynamoDBTableOutput:
+    Description: "Customer DynamoDB Table"
+    Value: CustomerDynamoDBTable
+    Export:
+      Name:
+        Fn::Sub: "${AWS::StackName}-CustomerDynamoDbTableID"

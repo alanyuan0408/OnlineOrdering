@@ -2,6 +2,12 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Serverless Express Application/API powered by API Gateway and Lambda
+Parameters:
+  DynamoStack:
+    Type: "String"
+    Description: "Stack containing all the Dynamo Definitions"
+    Default: "DynamoTables"
+
 Resources:
   APIGatewayApi:
     Type: AWS::Serverless::Api
@@ -77,6 +83,11 @@ Resources:
             RestApiId: !Ref APIGatewayApi
             Path: /customers/{proxy+}
             Method: ANY
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Fn::ImportValue:
+              Fn::Sub: "${DynamoStack}-CustomerDynamoDbTable"
 
   OrderLambdaApiGatewayExecutionPermission:
     Type: AWS::Lambda::Permission

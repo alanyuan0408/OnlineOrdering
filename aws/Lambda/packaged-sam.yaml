@@ -35,6 +35,11 @@ Outputs:
         - Ref: AWS::Region
         - '#/functions/'
         - Ref: CustomerLambda
+Parameters:
+  DynamoStack:
+    Default: DynamoTables
+    Description: Stack containing all the Dynamo Definitions
+    Type: String
 Resources:
   APIGatewayApi:
     Properties:
@@ -48,7 +53,12 @@ Resources:
     Type: AWS::Serverless::Api
   CustomerLambda:
     Properties:
-      CodeUri: s3://alanbucket-123123123/ac718e278281e372c9134f733fe4cde5
+      CodeUri: s3://alanbucket-123123123/514e63cf73e72e921d1fdfa071f91e9a
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Fn::ImportValue:
+              Fn::Sub: ${DynamoStack}-CustomerDynamoDbTable
       Events:
         ProxyApiGreedy:
           Properties:
