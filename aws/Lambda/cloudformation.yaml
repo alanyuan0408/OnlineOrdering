@@ -6,7 +6,6 @@ Parameters:
   DynamoStack:
     Type: "String"
     Description: "Stack containing all the Dynamo Definitions"
-    Default: "DynamoTables"
 
 Resources:
   APIGatewayApi:
@@ -43,7 +42,14 @@ Resources:
           - Effect: Allow
             Action:
             - dynamodb:*
-            Resource: "*"
+            Resource: !Join
+              - ''
+              - - 'arn:aws:dynamodb:'
+                - !Ref AWS::Region
+                - ":"
+                - !Ref AWS::AccountId
+                - ":table"
+                - "/*"
 
   CustomerLambdaApiGatewayExecutionPermission:
     Type: AWS::Lambda::Permission
@@ -87,7 +93,7 @@ Resources:
         Variables:
           TABLE_NAME:
             Fn::ImportValue:
-              Fn::Sub: "${DynamoStack}-CustomerDynamoDbTable"
+              Fn::Sub: "${DynamoStack}-CustomerDynamoDBTable"
 
   OrderLambdaApiGatewayExecutionPermission:
     Type: AWS::Lambda::Permission

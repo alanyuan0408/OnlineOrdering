@@ -20,7 +20,8 @@ Resources:
 Outputs:
   CustomerDynamoDBTableOutput:
     Description: "Customer DynamoDB Table"
-    Value: CustomerDynamoDBTable
+    Value: 
+      !Ref CustomerDynamoDBTable
     Export:
       Name:
-        Fn::Sub: "${AWS::StackName}-CustomerDynamoDbTableID"
+        Fn::Sub: "${AWS::StackName}-CustomerDynamoDBTable"
