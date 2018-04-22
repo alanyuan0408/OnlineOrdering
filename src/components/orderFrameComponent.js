@@ -5,7 +5,7 @@ import MenuItems from '../assets/orderItems';
 import MenuSelection from './menuSelectionComponent';
 import SelectedOrder from './selectedOrderComponent';
 
-var gatewayURl = "https://cuk7r57yu8.execute-api.us-east-2.amazonaws.com/prod/customers"
+var gatewayURl = "https://0z45mil1tb.execute-api.us-east-2.amazonaws.com/prod//customers"
 
 class OrderFrame extends Component {
 
@@ -82,7 +82,7 @@ class OrderFrame extends Component {
 
         <div>
           {this.state.menuItems.map(item =>
-            <MenuSelection itemTitle={item.itemTitle} 
+            <MenuSelection itemTitle={item.itemTitle}
             itemDescription={item.itemDescription}
             callbackFromParent={this.parentCallBack}
             key={item.id}/>
