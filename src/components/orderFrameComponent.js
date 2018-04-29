@@ -5,7 +5,10 @@ import MenuItems from '../assets/orderItems';
 import MenuSelection from './menuSelectionComponent';
 import SelectedOrder from './selectedOrderComponent';
 
-var gatewayURl = "https://0z45mil1tb.execute-api.us-east-2.amazonaws.com/prod//customers"
+import store from "../stores/index";
+import { addArticle } from "../actions/index";
+
+var gatewayURl = "https://0z45mil1tb.execute-api.us-east-2.amazonaws.com/prod/customers"
 
 class OrderFrame extends Component {
 
@@ -15,6 +18,7 @@ class OrderFrame extends Component {
 
     this.state = MenuItems;
     this.state.orderItems = [];
+    this.state.ordersPlaced = 0;
 
     this.parentCallBack = this.parentCallBack.bind(this);
     this.sendOrder = this.sendOrder.bind(this);
