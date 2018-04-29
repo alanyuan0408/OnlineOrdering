@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 
+import store from "../stores/index";
+import { addArticle } from "../actions/index";
+
 class MenuSelection extends Component {
 
   // Individual Menu Selection Component
@@ -25,6 +28,10 @@ class MenuSelection extends Component {
     orderPackage.quantity = this.state.numberSelected;
 
     this.props.callbackFromParent(orderPackage);
+
+    store.dispatch( 
+      addArticle({ name: 'React Redux Tutorial for Beginners', id: 1 }) 
+    )
   };
 
   handleChange(e){
