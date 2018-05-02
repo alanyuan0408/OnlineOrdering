@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../css/App.css';
 import MenuItems from '../assets/orderItems';
-import MenuSelection from './menuSelectionComponent';
+import MenuSelection from './menuSelectionComponent/menuSelectionComponent';
 import SelectedOrder from './selectedOrderComponent';
-
-import store from "../stores/index";
-import { addArticle } from "../actions/index";
 
 var gatewayURl = "https://0z45mil1tb.execute-api.us-east-2.amazonaws.com/prod/customers"
 
