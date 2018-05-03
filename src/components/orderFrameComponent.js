@@ -83,10 +83,11 @@ class OrderFrame extends Component {
 
         <div>
           {this.state.menuItems.map(item =>
-            <MenuSelection itemTitle={item.itemTitle}
-            itemDescription={item.itemDescription}
-            callbackFromParent={this.parentCallBack}
-            key={item.id}/>
+            <MenuSelection
+                itemTitle={item.itemTitle}
+                itemDescription={item.itemDescription}
+                key={item.id}
+            />
           )}
         </div>
 

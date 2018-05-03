@@ -3,14 +3,12 @@ import { connect } from "react-redux";
 import store from "../../stores/index";
 
 import { MenuSelection } from "./menuSelectionComponent";
+import { addArticle } from "../../actions/index";
 
-
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state, ownProps) => {
 	let defaultState = {
-		itemTitle: props.itemTitle,
-		itemDescription: props.itemDescription,
-		numberSelected: 0,
-    	defaultValue: 0,
+		  itemTitle: ownProps.itemTitle,
+		  itemDescription: ownProps.itemDescription,
     	articles: store.articles
 	};
 
