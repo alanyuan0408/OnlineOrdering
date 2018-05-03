@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
 	let defaultState = {
 		  itemTitle: ownProps.itemTitle,
 		  itemDescription: ownProps.itemDescription,
-    	articles: store.articles
+    	articles: state.articles
 	};
 
   	return defaultState;
@@ -17,10 +17,24 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addArticle: article => dispatch(addArticle(article))
+    dispatch: dispatch
   };
 };
 
-const menuSelection = connect(mapStateToProps, mapDispatchToProps)(MenuSelection);
+const mergeProps = (state, dispatchProps, ownProps) => {
+  return {
+    itemTitle: ownProps.match.params.itemTitle,
+    itemDescription: ownProps.match.params.itemDescription,
+    articles: state.articles,
+
+    addArticle: () => {
+      dispatchProps.dispatch(
+        addArticle(state)
+      )
+    }
+  }
+}
+
+const menuSelection = connect(mapStateToProps, mapDispatchToProps, mergeProps)(MenuSelection);
 
 export default menuSelection;

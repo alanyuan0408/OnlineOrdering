@@ -20,14 +20,12 @@ class MenuSelection extends Component {
     orderPackage.title = this.props.itemTitle;
     orderPackage.quantity = this.props.itemDescription;
 
-    const { title } = this.state;
-    const id = uuidv1();
-
-    this.props.addArticle({title, id});
+    this.props.addArticle(orderPackage);
   };
 
 
   render() {
+    console.log(this.props)
     return (
       <div className="menu-selection">
         <h3>{this.props.itemTitle}</h3>
