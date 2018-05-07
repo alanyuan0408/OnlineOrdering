@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../css/App.css';
 import MenuItems from '../assets/orderItems';
-import MenuSelection from './menuSelectionComponent/menuSelectionComponent';
+import MenuSelectionContainer from './menuSelectionComponent/menuSelectionContainer';
 import SelectedOrder from './selectedOrderComponent';
 
 var gatewayURl = "https://0z45mil1tb.execute-api.us-east-2.amazonaws.com/prod/customers"
@@ -83,7 +83,7 @@ class OrderFrame extends Component {
 
         <div>
           {this.state.menuItems.map(item =>
-            <MenuSelection
+            <MenuSelectionContainer
                 itemTitle={item.itemTitle}
                 itemDescription={item.itemDescription}
                 key={item.id}

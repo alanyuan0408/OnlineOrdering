@@ -2,39 +2,25 @@ import React from "react";
 import { connect } from "react-redux";
 import store from "../../stores/index";
 
-import { MenuSelection } from "./menuSelectionComponent";
+import MenuSelection from "./menuSelectionComponent";
 import { addArticle } from "../../actions/index";
 
 const mapStateToProps = (state, ownProps) => {
 	let defaultState = {
-		  itemTitle: ownProps.itemTitle,
-		  itemDescription: ownProps.itemDescription,
-    	articles: state.articles
+		itemTitle: ownProps.itemTitle,
+		itemDescription: ownProps.itemDescription,
+      	id: ownProps.id
 	};
 
-  	return defaultState;
+  return defaultState;
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    dispatch: dispatch
+    testArticle: article => dispatch(addArticle(article))
   };
 };
 
-const mergeProps = (state, dispatchProps, ownProps) => {
-  return {
-    itemTitle: ownProps.match.params.itemTitle,
-    itemDescription: ownProps.match.params.itemDescription,
-    articles: state.articles,
+const MenuSelectionContainer = connect(mapStateToProps, mapDispatchToProps)(MenuSelection);
 
-    addArticle: () => {
-      dispatchProps.dispatch(
-        addArticle(state)
-      )
-    }
-  }
-}
-
-const menuSelection = connect(mapStateToProps, mapDispatchToProps, mergeProps)(MenuSelection);
-
-export default menuSelection;
+export default MenuSelectionContainer;

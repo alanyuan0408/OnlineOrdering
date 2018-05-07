@@ -12,20 +12,25 @@ class MenuSelection extends Component {
       }
 
       this.placeOrder = this.placeOrder.bind(this);
+      this.handleValueChange = this.handleValueChange.bind(this);
   }
 
   placeOrder(){
     var orderPackage = {};
-    orderPackage.id = Math.floor(Math.random() * 2000);
+    orderPackage.id = Math.floor(Math.random() * 1000000);
     orderPackage.title = this.props.itemTitle;
-    orderPackage.quantity = this.props.itemDescription;
+    orderPackage.quantity = this.state.selectedValue;
 
-    this.props.addArticle(orderPackage);
+    console.log(orderPackage);
+    this.props.testArticle(orderPackage);
   };
+
+  handleValueChange(value){
+    this.setState({selectedValue: value});
+  }
 
 
   render() {
-    console.log(this.props)
     return (
       <div className="menu-selection">
         <h3>{this.props.itemTitle}</h3>
@@ -33,6 +38,7 @@ class MenuSelection extends Component {
         <p>{this.props.itemDescription}</p>
         <input placeholder="Quantity"
           value={this.state.selectedValue}
+          onChange={e => this.handleValueChange(e.target.value)}
           type="number" step="1" min="0" max="20"/>
         <button onClick= {this.placeOrder}>Place Order </button>
       </div>
