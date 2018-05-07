@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../css/App.css';
-import MenuItems from '../assets/orderItems';
-import MenuSelectionContainer from './menuSelectionComponent/menuSelectionContainer';
-import SelectedOrder from './selectedOrderComponent';
+import '../../css/App.css';
+import MenuItems from '../../assets/orderItems';
+import MenuSelectionContainer from '../menuSelectionComponent/menuSelectionContainer';
+import SelectedOrder from '../selectedOrderComponent';
 
 var gatewayURl = "https://0z45mil1tb.execute-api.us-east-2.amazonaws.com/prod/customers"
 
 class OrderFrame extends Component {
 
   // Main Selection Frame for listing the Items
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = MenuItems;
-    this.state.orderItems = [];
-    this.state.ordersPlaced = 0;
 
-    this.parentCallBack = this.parentCallBack.bind(this);
     this.sendOrder = this.sendOrder.bind(this);
   };
 
@@ -65,6 +62,7 @@ class OrderFrame extends Component {
   }
 
   render() {
+    console.log(this.props.articles);
     return (
       <div className="OrderFrame">
         <p className="menu-title">
@@ -72,13 +70,14 @@ class OrderFrame extends Component {
         </p>
         <div>
           <p>Selected Items:</p>
-          {this.state.orderItems.map(item =>
+          {this.props.articles.map(item =>
             <SelectedOrder title={item.title}
             quantity={item.quantity}
             key={item.id}/>
           )}
           <br/>
           <button onClick= {this.sendOrder}>Send Order</button>
+          <button onClick= {this.props.clearArticles}>Clear Orders</button>
         </div>
 
         <div>

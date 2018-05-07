@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import OrderFrame from './orderFrameComponent'
+import OrderFrameContainer from './OrderComponent/orderFrameContainer'
 import AppFooter from './appFooterComponent'
 import AppHeader from './appHeaderComponent'
 
@@ -21,7 +21,7 @@ class App extends Component {
       <div className="App">
         <AppHeader headerTitle ="Online Ordering App"/>
 
-        <OrderFrame/>
+        <OrderFrameContainer/>
 
         <AppFooter footerTexts ="All Rights Reserved"/>
       </div>

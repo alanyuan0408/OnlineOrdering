@@ -21,7 +21,6 @@ class MenuSelection extends Component {
     orderPackage.title = this.props.itemTitle;
     orderPackage.quantity = this.state.selectedValue;
 
-    console.log(orderPackage);
     this.props.testArticle(orderPackage);
   };
 
@@ -34,7 +33,6 @@ class MenuSelection extends Component {
     return (
       <div className="menu-selection">
         <h3>{this.props.itemTitle}</h3>
-        <p>{this.props.articles}</p>
         <p>{this.props.itemDescription}</p>
         <input placeholder="Quantity"
           value={this.state.selectedValue}
