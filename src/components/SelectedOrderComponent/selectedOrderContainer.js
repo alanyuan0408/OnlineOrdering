@@ -7,7 +7,6 @@ import { clearOrders } from "../../actions/index";
 
 const mapStateToProps = (state, props) => {
 	const defaultState = {
-		orders: state.orders,
 		AwsBaseUrl: props.AwsBaseUrl
 	};
   return defaultState;

@@ -3,7 +3,6 @@ import axios from 'axios';
 import '../../css/App.css';
 
 import MenuSelectionContainer from '../OrderComponent/menuSelectionContainer';
-import SelectedOrder from '../selectedOrderComponent';
 
 class OrderFrame extends Component {
 

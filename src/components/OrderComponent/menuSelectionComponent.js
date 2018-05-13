@@ -27,8 +27,7 @@ class MenuSelection extends Component {
   handleValueChange(value){
     this.setState({selectedValue: value});
   }
-
-
+ 
   render() {
     return (
       <div className="menu-selection">

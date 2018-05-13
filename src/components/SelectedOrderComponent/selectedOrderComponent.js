@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/App.css';
+import '../../css/App.css';
 
 class SelectedOrder extends Component {
 
@@ -15,14 +15,16 @@ class SelectedOrder extends Component {
 
   render() {
     return (
-      <p className="menu-title">
-        Menu Selection
-      </p>
-
       <div>
-        <p>{this.state.title}: {this.state.quantity}</p>
+        <p className="menu-title">
+          Menu Selection
+        </p>
 
-        <p>{this.state.description}</p>
+        <div>
+          <p>{this.state.title}: {this.state.quantity}</p>
+
+          <p>{this.state.description}</p>
+        </div>
       </div>
     );
   }

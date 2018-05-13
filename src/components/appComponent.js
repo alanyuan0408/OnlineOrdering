@@ -3,11 +3,10 @@ import '../css/App.css';
 import OrderFrameContainer from './OrderFrameComponent/orderFrameContainer'
 import AppFooter from './appFooterComponent'
 import AppHeader from './appHeaderComponent'
-import SelectOrderFrameContainer from './SelectedOrderFrameComponent/selectedorderframecomponent'
+import SelectOrderFrameContainer from './SelectedOrderFrameComponent/selectorderframecomponent'
 
 // Initialization Values
 import { PizzaItems, DrinkItems, SideItems } from '../assets/MenuItems';
-var AwsBaseUrl = "https://0z45mil1tb.execute-api.us-east-2.amazonaws.com/prod/"
 
 class App extends Component {
   // Base App Component that contains the Order Frame,
@@ -16,7 +15,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      title: "Online Ordering App"
+      title: "Online Ordering App",
+      AwsBaseUrl: "https://0z45mil1tb.execute-api.us-east-2.amazonaws.com/prod/"
     }
 
   };
@@ -32,7 +32,7 @@ class App extends Component {
           <SelectOrderFrameContainer />
 
           <OrderFrameContainer
-             AwsBaseUrl = { AwsBaseUrl }
+             AwsBaseUrl = { this.state.AwsBaseUrl }
              MenuItems = { PizzaItems }
           />
 
@@ -41,6 +41,7 @@ class App extends Component {
         <AppFooter footerTexts ="All Rights Reserved"/>
       </div>
     );
+    
   }
 }
 
