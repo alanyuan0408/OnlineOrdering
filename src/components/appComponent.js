@@ -6,7 +6,7 @@ import AppHeader from './appHeaderComponent'
 import SelectOrderFrameContainer from './SelectedOrderFrameComponent/selectedorderframecomponent'
 
 // Initialization Values
-import {  PizzaItems, DrinkItems, SideItems } from '../assets/MenuItems';
+import { PizzaItems, DrinkItems, SideItems } from '../assets/MenuItems';
 var AwsBaseUrl = "https://0z45mil1tb.execute-api.us-east-2.amazonaws.com/prod/"
 
 class App extends Component {
