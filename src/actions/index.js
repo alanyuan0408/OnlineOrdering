@@ -1,10 +1,10 @@
-import { ADD_ARTICLE, CLEAR_ARTICLE } from "../constants/action-types";
+import { ADD_ORDER, CLEAR_ORDERS } from "../constants/action-types";
 
-export const addArticle = article => ({
-	type: ADD_ARTICLE,
-	payload: article
+export const addOrder = order => ({
+	type: ADD_ORDER,
+	payload: order
 });
 
-export const clearArticles = () => ({
-	type: CLEAR_ARTICLE
+export const clearOrders = () => ({
+	type: CLEAR_ORDERS
 });

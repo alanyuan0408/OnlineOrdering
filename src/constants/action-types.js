@@ -1,2 +1,2 @@
-export const ADD_ARTICLE = "ADD_ARTICLE";
-export const CLEAR_ARTICLE = "CLEAR_ARTICLE";
+export const ADD_ORDER = "ADD_ORDER";
+export const CLEAR_ORDERS = "CLEAR_ORDERS";

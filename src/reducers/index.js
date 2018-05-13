@@ -1,16 +1,16 @@
-import { ADD_ARTICLE, CLEAR_ARTICLE } from "../constants/action-types";
+import { ADD_ORDER, CLEAR_ORDERS } from "../constants/action-types";
 
 const initialState = {
-  articles: []
+  orders: []
 };
 
 const rootReducer = (state = initialState, action) => {
 
   switch (action.type) {
-    case ADD_ARTICLE:
-    	return { ...state, articles: [...state.articles, action.payload] };
-   	case CLEAR_ARTICLE:
-   		return { ...state, articles: [] };
+    case ADD_ORDER:
+    	return { ...state, orders: [...state.orders, action.payload] };
+   	case CLEAR_ORDERS:
+   		return { ...state, orders: [] };
     default:
     	return state;
   }

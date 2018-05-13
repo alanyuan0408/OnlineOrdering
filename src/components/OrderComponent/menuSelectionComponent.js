@@ -21,7 +21,7 @@ class MenuSelection extends Component {
     orderPackage.title = this.props.itemTitle;
     orderPackage.quantity = this.state.selectedValue;
 
-    this.props.testArticle(orderPackage);
+    this.props.addOrder(orderPackage);
   };
 
   handleValueChange(value){

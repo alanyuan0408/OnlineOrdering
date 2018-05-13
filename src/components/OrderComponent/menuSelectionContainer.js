@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import store from "../../stores/index";
 
 import MenuSelection from "./menuSelectionComponent";
-import { addArticle } from "../../actions/index";
+import { addOrder } from "../../actions/index";
 
 const mapStateToProps = (state, ownProps) => {
-	let defaultState = {
+	const defaultState = {
 		itemTitle: ownProps.itemTitle,
 		itemDescription: ownProps.itemDescription,
       	id: ownProps.id
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    testArticle: article => dispatch(addArticle(article))
+    addOrder: article => dispatch(addOrder(article)),
   };
 };
 
