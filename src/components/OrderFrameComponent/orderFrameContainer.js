@@ -13,12 +13,6 @@ const mapStateToProps = (state, props) => {
   return defaultState;
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    clearOrders: () => dispatch(clearOrders())
-  };
-};
-
-const OrderFrameContainer = connect(mapStateToProps, mapDispatchToProps)(OrderFrame);
+const OrderFrameContainer = connect(mapStateToProps)(OrderFrame);
 
 export default OrderFrameContainer;

@@ -3,14 +3,8 @@ import '../../css/App.css';
 
 class SelectedOrder extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      title: props.title,
-      quantity: props.quantity
-    }
-
+  constructor() {
+    super();
   };
 
   render() {
@@ -21,9 +15,9 @@ class SelectedOrder extends Component {
         </p>
 
         <div>
-          <p>{this.state.title}: {this.state.quantity}</p>
+          <p>{this.props.title}: {this.props.quantity}</p>
 
-          <p>{this.state.description}</p>
+          <p>{this.props.description}</p>
         </div>
       </div>
     );

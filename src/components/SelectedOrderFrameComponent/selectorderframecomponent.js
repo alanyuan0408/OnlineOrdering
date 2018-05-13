@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../../css/App.css';
 
-import SelectedOrder from '../SelectedOrderComponent/selectedOrderComponent';
+import SelectedOrderContainer from '../SelectedOrderComponent/selectedOrderContainer';
 
 class SelectedOrderFrame extends Component {
 
@@ -12,12 +12,11 @@ class SelectedOrderFrame extends Component {
   };
 
   render() {
-
     return (
       <div>
           <p>Selected Items:</p>
             {this.props.orders.map(item =>
-              <SelectedOrder title={item.title}
+              <SelectedOrderContainer title={item.title}
                 quantity={item.quantity}
                 key={item.id}
               />

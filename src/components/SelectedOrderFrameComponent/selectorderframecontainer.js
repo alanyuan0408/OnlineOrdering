@@ -2,17 +2,23 @@ import React from "react";
 import { connect } from "react-redux";
 import store from "../../stores/index";
 
-import OrderFrame from "./orderFrameComponent";
-import { clearOrders } from "../../actions/index";
+import SelectedOrderFrame from "./selectorderframecomponent";
+import { addOrder, clearOrders } from "../../actions/index";
 
-const mapStateToProps = (state, props) => {
-	const defaultState = {
-		orders: state.orders,
+const mapStateToProps = (state) => {
+	let defaultState = {
+		orders: state.orders
 	};
   return defaultState;
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+  	addOrder: () => dispatch(addOrder()),
+    clearOrders: () => dispatch(clearOrders())
+  };
+};
 
-const selectOrderFrameContainer = connect(mapStateToProps)(OrderFrame);
+const SelectOrderFrameContainer = connect(mapStateToProps, mapDispatchToProps)(SelectedOrderFrame);
 
-export default selectOrderFrameContainer;
+export default SelectOrderFrameContainer;

@@ -2,17 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 import store from "../../stores/index";
 
-import OrderFrame from "./orderFrameComponent";
+import SelectedOrder from "./selectedOrderComponent";
 import { clearOrders } from "../../actions/index";
 
 const mapStateToProps = (state, props) => {
 	const defaultState = {
-		AwsBaseUrl: props.AwsBaseUrl
+		AwsBaseUrl: props.AwsBaseUrl,
+		quantity: props.quantity,
+		title: props.title,
+		description: props.description
 	};
   return defaultState;
 };
 
 
-const selectedOrderContainer = connect(mapStateToProps)(OrderFrame);
+
+const selectedOrderContainer = connect(mapStateToProps)(SelectedOrder);
 
 export default selectedOrderContainer;
