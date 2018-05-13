@@ -3,7 +3,7 @@ import '../css/App.css';
 import OrderFrameContainer from './OrderFrameComponent/orderFrameContainer'
 import AppFooter from './appFooterComponent'
 import AppHeader from './appHeaderComponent'
-import SelectOrderFrameContainer from './SelectedOrderFrameComponent/selectorderframecomponent'
+import SelectOrderFrameContainer from './SelectedOrderFrameComponent/selectorderframecontainer'
 
 // Initialization Values
 import { PizzaItems, DrinkItems, SideItems } from '../assets/MenuItems';
