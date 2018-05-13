@@ -15,6 +15,10 @@ class SelectedOrder extends Component {
 
   render() {
     return (
+      <p className="menu-title">
+        Menu Selection
+      </p>
+
       <div>
         <p>{this.state.title}: {this.state.quantity}</p>
 
