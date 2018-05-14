@@ -8,7 +8,8 @@ import { clearOrders } from "../../actions/index";
 const mapStateToProps = (state, props) => {
 	const defaultState = {
 		menuItems: props.MenuItems,
-		AwsBaseUrl: props.AwsBaseUrl
+		AwsBaseUrl: props.AwsBaseUrl,
+		title: props.Title
 	};
   return defaultState;
 };

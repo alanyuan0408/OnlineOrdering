@@ -3,6 +3,7 @@ import '../css/App.css';
 import OrderFrameContainer from './OrderFrameComponent/orderFrameContainer'
 import AppFooter from './appFooterComponent'
 import AppHeader from './appHeaderComponent'
+import NavComponent from './navComponent'
 import SelectOrderFrameContainer from './SelectedOrderFrameComponent/selectorderframecontainer'
 
 import { Switch, Router, Route, Link } from "react-router-dom";
@@ -33,25 +34,30 @@ class App extends Component {
 
           <SelectOrderFrameContainer />
 
+          <NavComponent />
+
           <Switch>
-            <Route exact path="/" render={ () =>
+            <Route exact path="/pizzas" render={ () =>
                 <OrderFrameContainer
-                   AwsBaseUrl = { this.state.AwsBaseUrl }
-                   MenuItems = { PizzaItems }
+                    Title = "Pizza Menu"
+                    AwsBaseUrl = { this.state.AwsBaseUrl }
+                    MenuItems = { PizzaItems }
                 />
               }
             />
 
-            <Route path="/roster" render={ () =>
+            <Route path="/drinks" render={ () =>
                 <OrderFrameContainer
+                  Title = "Drinks Menu"
                   AwsBaseUrl = { this.state.AwsBaseUrl }
                   MenuItems = { DrinkItems }
                 />
               }
             />
 
-            <Route path="/schedule" render={ () =>
+            <Route path="/sides" render={ () =>
                 <OrderFrameContainer
+                  Title = "Sides Menu"
                   AwsBaseUrl = { this.state.AwsBaseUrl }
                   MenuItems = { SideItems }
                 />

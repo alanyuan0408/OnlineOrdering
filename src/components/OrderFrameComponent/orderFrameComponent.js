@@ -17,6 +17,8 @@ class OrderFrame extends Component {
     return (
 
         <div>
+          <h2>{this.props.title}</h2>
+
           {this.props.menuItems.map(item =>
             <MenuSelectionContainer
                 itemTitle={item.itemTitle}
