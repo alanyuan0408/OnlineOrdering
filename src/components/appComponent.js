@@ -5,6 +5,8 @@ import AppFooter from './appFooterComponent'
 import AppHeader from './appHeaderComponent'
 import SelectOrderFrameContainer from './SelectedOrderFrameComponent/selectorderframecontainer'
 
+import { Switch, Router, Route, Link } from "react-router-dom";
+
 // Initialization Values
 import { PizzaItems, DrinkItems, SideItems } from '../assets/MenuItems';
 
@@ -31,17 +33,40 @@ class App extends Component {
 
           <SelectOrderFrameContainer />
 
-          <OrderFrameContainer
-             AwsBaseUrl = { this.state.AwsBaseUrl }
-             MenuItems = { PizzaItems }
-          />
+          <Switch>
+            <Route exact path="/" render={ () =>
+                <OrderFrameContainer
+                   AwsBaseUrl = { this.state.AwsBaseUrl }
+                   MenuItems = { PizzaItems }
+                />
+              }
+            />
+
+            <Route path="/roster" render={ () =>
+                <OrderFrameContainer
+                  AwsBaseUrl = { this.state.AwsBaseUrl }
+                  MenuItems = { DrinkItems }
+                />
+              }
+            />
+
+            <Route path="/schedule" render={ () =>
+                <OrderFrameContainer
+                  AwsBaseUrl = { this.state.AwsBaseUrl }
+                  MenuItems = { SideItems }
+                />
+              }
+            />
+          </Switch>
+
+
 
         </div>
 
         <AppFooter footerTexts ="All Rights Reserved"/>
       </div>
     );
-    
+
   }
 }
 
