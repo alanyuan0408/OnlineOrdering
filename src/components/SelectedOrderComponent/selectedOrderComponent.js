@@ -10,10 +10,6 @@ class SelectedOrder extends Component {
   render() {
     return (
       <div>
-        <p className="menu-title">
-          Menu Selection
-        </p>
-
         <div>
           <p>{this.props.title}: {this.props.quantity}</p>
 
