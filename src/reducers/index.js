@@ -2,26 +2,20 @@ import { ADD_ORDER, CLEAR_ORDERS } from "../constants/action-types";
 import { PizzaItems, DrinkItems, SideItems } from '../assets/MenuItems';
 
 const InitOrderState = (ItemsGroup) => {
-	console.log(ItemsGroup);
-	var initialState = {
-	  orders: []
-	};
+	var orders = []
 
-	for (var step = 0; step < ItemsGroup.length in ItemsGroup){
-		console.log(items)
-		for (var item in items){
-			console.log(item)
-			var append_item = item;
-			initialState.orders.push(append_item)
-		}
+	for (var item in ItemsGroup){
+		ItemsGroup[item]["quantity"] = 0;
+		orders.push(ItemsGroup[item]);
 	}
 
-	console.log(initialState)
-	return initialState;
+	return { 
+		orders: orders
+	};
 }
 
 const rootReducer = (state = 
-	InitOrderState([PizzaItems, DrinkItems, SideItems]), action) => {
+	InitOrderState(PizzaItems.concat(DrinkItems,SideItems)), action) => {
 
   switch (action.type) {
     case ADD_ORDER:
