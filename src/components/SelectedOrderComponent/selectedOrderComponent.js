@@ -11,9 +11,9 @@ class SelectedOrder extends Component {
     return (
       <div>
         <div>
-          <p>{this.props.title}: {this.props.quantity}</p>
+          <p>{this.props.itemTitle}: {this.props.quantity}</p>
 
-          <p>{this.props.description}</p>
+          <p>{this.props.itemDescription}</p>
         </div>
       </div>
     );

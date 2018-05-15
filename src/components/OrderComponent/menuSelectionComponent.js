@@ -17,8 +17,7 @@ class MenuSelection extends Component {
 
   placeOrder(){
     var orderPackage = {};
-    orderPackage.id = Math.floor(Math.random() * 1000000);
-    orderPackage.title = this.props.itemTitle;
+    orderPackage.itemTitle = this.props.itemTitle;
     orderPackage.quantity = this.state.selectedValue;
 
     this.props.addOrder(orderPackage);
