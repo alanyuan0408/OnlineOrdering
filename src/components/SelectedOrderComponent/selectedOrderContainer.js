@@ -7,15 +7,11 @@ import { clearOrders } from "../../actions/index";
 
 const mapStateToProps = (state, props) => {
 	const defaultState = {
-		AwsBaseUrl: props.AwsBaseUrl,
 		quantity: props.quantity,
-		title: props.itemTitle,
-		description: props.itemDescription
+		itemTitle: props.itemTitle,
 	};
   return defaultState;
 };
-
-
 
 const selectedOrderContainer = connect(mapStateToProps)(SelectedOrder);
 

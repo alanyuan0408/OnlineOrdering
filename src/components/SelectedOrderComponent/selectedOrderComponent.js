@@ -10,11 +10,16 @@ class SelectedOrder extends Component {
   render() {
     return (
       <div>
-        <div>
-          <p>{this.props.itemTitle}: {this.props.quantity}</p>
+        { this.props.quantity > 0 ? (
 
-          <p>{this.props.itemDescription}</p>
-        </div>
+            <div>
+              <p>{this.props.itemTitle}: {this.props.quantity} (
+                <a>Remove Order</a>
+              )</p>
+            </div>
+
+          ) : null
+        }
       </div>
     );
   }

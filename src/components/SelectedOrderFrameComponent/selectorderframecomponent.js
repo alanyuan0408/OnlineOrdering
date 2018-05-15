@@ -16,9 +16,10 @@ class SelectedOrderFrame extends Component {
       <div>
           <p>Selected Items:</p>
             {this.props.orders.map(item =>
-              <SelectedOrderContainer title={item.title}
+              <SelectedOrderContainer
+                itemTitle={item.itemTitle}
                 quantity={item.quantity}
-                key={item.id}
+                key={item.itemId}
               />
             )}
           <br></br>

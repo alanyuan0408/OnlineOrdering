@@ -1,4 +1,4 @@
-import { ADD_ORDER, CLEAR_ORDERS, DELETE_ORDERS } from "../constants/action-types";
+import { ADD_ORDER, CLEAR_ORDERS, DELETE_ORDER } from "../constants/action-types";
 
 export const addOrder = order => ({
 	type: ADD_ORDER,
@@ -10,6 +10,6 @@ export const clearOrders = () => ({
 });
 
 export const deleteOrder = order => ({
-	type: DELETE_ORDERS,
+	type: DELETE_ORDER,
 	payload: order
 });
