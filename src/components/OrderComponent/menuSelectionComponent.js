@@ -27,7 +27,7 @@ class MenuSelection extends Component {
   handleValueChange(value){
     this.setState({selectedValue: value});
   }
- 
+
   render() {
     return (
       <div className="menu-selection">
@@ -38,6 +38,8 @@ class MenuSelection extends Component {
           onChange={e => this.handleValueChange(e.target.value)}
           type="number" step="1" min="0" max="20"/>
         <button onClick= {this.placeOrder}>Place Order </button>
+
+        <button onClick= {this.placeOrder}>Clear Order </button>
       </div>
     );
   }
