@@ -38,7 +38,7 @@ class App extends Component {
               <NavComponent />
 
               <Switch>
-                <Route exact path="/pizzas" render={ () =>
+                <Route exact path="/" render={ () =>
                     <OrderFrameContainer
                         Title = "Pizza Menu"
                         AwsBaseUrl = { this.state.AwsBaseUrl }
