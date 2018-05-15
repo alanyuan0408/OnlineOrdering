@@ -7,7 +7,7 @@ import NavComponent from './navComponent'
 import SelectOrderFrameContainer from './SelectedOrderFrameComponent/selectorderframecontainer'
 
 import { Switch, Router, Route, Link } from "react-router-dom";
-
+import { Grid } from 'react-bootstrap';
 // Initialization Values
 import { PizzaItems, DrinkItems, SideItems } from '../assets/MenuItems';
 
@@ -27,47 +27,47 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
+      <div>
         <AppHeader headerTitle ="Online Ordering App"/>
 
-        <div className="OrderFrame">
+          <div class="OrderFrame">
+            <Grid >
 
-          <SelectOrderFrameContainer />
+              <SelectOrderFrameContainer />
 
-          <NavComponent />
+              <NavComponent />
 
-          <Switch>
-            <Route exact path="/pizzas" render={ () =>
-                <OrderFrameContainer
-                    Title = "Pizza Menu"
-                    AwsBaseUrl = { this.state.AwsBaseUrl }
-                    MenuItems = { PizzaItems }
+              <Switch>
+                <Route exact path="/" render={ () =>
+                    <OrderFrameContainer
+                        Title = "Pizza Menu"
+                        AwsBaseUrl = { this.state.AwsBaseUrl }
+                        MenuItems = { PizzaItems }
+                    />
+                  }
                 />
-              }
-            />
 
-            <Route path="/drinks" render={ () =>
-                <OrderFrameContainer
-                  Title = "Drinks Menu"
-                  AwsBaseUrl = { this.state.AwsBaseUrl }
-                  MenuItems = { DrinkItems }
+                <Route path="/drinks" render={ () =>
+                    <OrderFrameContainer
+                      Title = "Drinks Menu"
+                      AwsBaseUrl = { this.state.AwsBaseUrl }
+                      MenuItems = { DrinkItems }
+                    />
+                  }
                 />
-              }
-            />
 
-            <Route path="/sides" render={ () =>
-                <OrderFrameContainer
-                  Title = "Sides Menu"
-                  AwsBaseUrl = { this.state.AwsBaseUrl }
-                  MenuItems = { SideItems }
+                <Route path="/sides" render={ () =>
+                    <OrderFrameContainer
+                      Title = "Sides Menu"
+                      AwsBaseUrl = { this.state.AwsBaseUrl }
+                      MenuItems = { SideItems }
+                    />
+                  }
                 />
-              }
-            />
-          </Switch>
+              </Switch>
 
-
-
-        </div>
+            </Grid>
+          </div>
 
         <AppFooter footerTexts ="All Rights Reserved"/>
       </div>

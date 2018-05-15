@@ -5,7 +5,7 @@ import store from "../../stores/index";
 import SelectedOrderFrame from "./selectorderframecomponent";
 import { addOrder, clearOrders } from "../../actions/index";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
 	let defaultState = {
 		orders: state.orders
 	};

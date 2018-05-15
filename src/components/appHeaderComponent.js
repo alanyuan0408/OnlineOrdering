@@ -6,9 +6,9 @@ class AppHeader extends Component {
   // Header Component, top bar of the app
   render() {
     return (
-        <header className="App-header">
+        <div className="App-header">
           <h1 className="App-title">{this.props.headerTitle}</h1>
-        </header>
+        </div>
     );
   }
 

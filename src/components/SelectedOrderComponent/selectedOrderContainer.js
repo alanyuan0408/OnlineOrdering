@@ -9,8 +9,8 @@ const mapStateToProps = (state, props) => {
 	const defaultState = {
 		AwsBaseUrl: props.AwsBaseUrl,
 		quantity: props.quantity,
-		title: props.title,
-		description: props.description
+		title: props.itemTitle,
+		description: props.itemDescription
 	};
   return defaultState;
 };

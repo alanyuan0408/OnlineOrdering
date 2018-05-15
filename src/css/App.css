@@ -1,12 +1,10 @@
-.App {
-  text-align: center;
-}
 
 .App-header {
   background-color: #222;
   height: 80px;
   padding: 20px;
   color: white;
+  text-align: center;
 }
 
 .App-title {
@@ -19,12 +17,13 @@
 
 .App-footer {
   background-color: #222;
-  height: 50px;
-  padding: 10px;
+  height: 80px;
   color: white;
   position: fixed;
   bottom: 0;
   width: 100%;
+  padding: 20px;
+  text-align: center;
 }
 
 .footer-text {
@@ -43,6 +42,6 @@
 }
 
 .OrderFrame {
-  height: calc(100vh - 190px);
+  height: calc(100vh - 160px);
   overflow-y: scroll;
 }
