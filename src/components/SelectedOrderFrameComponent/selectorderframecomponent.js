@@ -17,15 +17,12 @@ class SelectedOrderFrame extends Component {
           <p>Selected Items:</p>
             {this.props.orders.map(item =>
               <SelectedOrderContainer
-                itemTitle={item.itemTitle}
-                quantity={item.quantity}
                 itemId={item.itemId}
               />
             )}
-          <br></br>
 
-          <button onClick= {this.props.sendOrder}>Send Order</button>
           <button onClick= {this.props.clearOrders}>Clear Orders</button>
+          <br></br>
       </div>
     );
 

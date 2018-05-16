@@ -28,9 +28,10 @@ const rootReducer = (state =
     case ADD_ORDER:
     	return { ...state, orders: addOrder(action.payload, state.orders) };
    	case CLEAR_ORDERS:
-   		return { ...state, orders: [] };
+   		var newState = InitOrderState(PizzaItems.concat(DrinkItems,SideItems))
+   		return newState ;
    	case DELETE_ORDER:
-   		return { ...state, orders: [] };
+   		return { ...state, orders: deleteOrder(action.payload, state.orders) };
     default:
     	return state;
   }
@@ -39,6 +40,12 @@ const rootReducer = (state =
 const addOrder = (payload, orders) => {
 	var newOrders = orders;
 	newOrders[payload.itemId].quantity = parseInt(payload.quantity);
+	return newOrders;
+}
+
+const deleteOrder = (payload, orders) => {
+	var newOrders = orders;
+	newOrders[payload].quantity = 0;
 	return newOrders;
 }
 

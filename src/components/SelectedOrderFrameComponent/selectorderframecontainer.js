@@ -14,7 +14,6 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-  	addOrder: () => dispatch(addOrder()),
     clearOrders: () => dispatch(clearOrders())
   };
 };

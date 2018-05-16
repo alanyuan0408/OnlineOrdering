@@ -10,9 +10,9 @@ class NavComponent extends Component {
   render() {
     return (
       <Breadcrumb>
-        <Breadcrumb.Item ><Link to='/'>Pizza Menu</Link></Breadcrumb.Item>
-        <Breadcrumb.Item ><Link to='/drinks'>Drinks Menu</Link></Breadcrumb.Item>
-        <Breadcrumb.Item active><Link to='/sides'>Sides Menu</Link></Breadcrumb.Item>
+        <Breadcrumb.Item active><Link to='/'>Pizza Menu </Link></Breadcrumb.Item>
+        <Breadcrumb.Item ><Link to='/drinks'>Drinks Menu </Link></Breadcrumb.Item>
+        <Breadcrumb.Item ><Link to='/sides'>Sides Menu </Link></Breadcrumb.Item>
     </Breadcrumb>
     );
   }
