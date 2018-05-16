@@ -4,8 +4,8 @@ import uuidv1 from "uuid";
 
 class MenuSelection extends Component {
 
-  constructor(props) {
-      super(props);
+  constructor() {
+      super();
 
       this.state ={
         selectedValue: 0
@@ -37,7 +37,11 @@ class MenuSelection extends Component {
           value={this.state.selectedValue}
           onChange={e => this.handleValueChange(e.target.value)}
           type="number" step="1" min="0" max="20"/>
-        <button onClick= {this.placeOrder}>Place Order </button>
+
+        <button onClick= {this.placeOrder}>
+        { this.props.quantity == 0 ? "Place Order" : "Modify Order"}
+         </button>
+        <button onClick= {this.props.deleteOrder}>Delete Order </button>
       </div>
     );
   }

@@ -18,6 +18,8 @@ class SelectedOrderFrame extends Component {
             {this.props.orders.map(item =>
               <SelectedOrderContainer
                 itemId={item.itemId}
+                itemTitle={item.itemTitle}
+                itemDescription={item.itemDescription}
               />
             )}
 

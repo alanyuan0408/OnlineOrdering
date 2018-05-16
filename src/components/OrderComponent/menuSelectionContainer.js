@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import store from "../../stores/index";
 
 import MenuSelection from "./menuSelectionComponent";
-import { addOrder } from "../../actions/index";
+import { addOrder, deleteOrder } from "../../actions/index";
 
 const mapStateToProps = (state, ownProps) => {
 	var order = state.orders[ownProps.itemId]
-	
+
 	const defaultState = {
 		itemTitle: ownProps.itemTitle,
 		itemDescription: ownProps.itemDescription,
@@ -21,9 +21,20 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     addOrder: article => dispatch(addOrder(article)),
+    deleteOrder: itemId => dispatch(deleteOrder(itemId)),
   };
 };
 
-const MenuSelectionContainer = connect(mapStateToProps, mapDispatchToProps)(MenuSelection);
+const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
+    return {
+      ...propsFromState,
+      ...ownProps,
+      ...propsFromDispatch,
+      deleteOrder: () => {
+      	propsFromDispatch.deleteOrder(propsFromState.itemId)
+      }
+    };
+};
+const MenuSelectionContainer = connect(mapStateToProps, mapDispatchToProps, mergeProps)(MenuSelection);
 
 export default MenuSelectionContainer;

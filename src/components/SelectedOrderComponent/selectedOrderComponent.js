@@ -15,7 +15,7 @@ class SelectedOrder extends Component {
 
             <div>
               <p>{this.props.itemTitle}: {this.props.quantity} (
-                <a>Remove Order</a>
+                <a onClick={this.props.deleteOrder} >Remove Order</a>
               )</p>
             </div>
 

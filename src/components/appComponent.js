@@ -30,7 +30,7 @@ class App extends Component {
       <div>
         <AppHeader headerTitle ="Online Ordering App"/>
 
-          <div class="OrderFrame">
+          <div className="OrderFrame">
             <Grid>
 
               <SelectOrderFrameContainer />
