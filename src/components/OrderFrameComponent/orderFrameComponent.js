@@ -7,8 +7,8 @@ import MenuSelectionContainer from '../OrderComponent/menuSelectionContainer';
 class OrderFrame extends Component {
 
   // Main Selection Frame for listing the Items
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
   };
 
 
