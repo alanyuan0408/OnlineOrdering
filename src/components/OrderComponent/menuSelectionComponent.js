@@ -19,6 +19,7 @@ class MenuSelection extends Component {
     var orderPackage = {};
     orderPackage.itemTitle = this.props.itemTitle;
     orderPackage.quantity = this.state.selectedValue;
+    orderPackage.itemId = this.props.itemId;
 
     this.props.addOrder(orderPackage);
   };

@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
 	const defaultState = {
 		itemTitle: ownProps.itemTitle,
 		itemDescription: ownProps.itemDescription,
-      	id: ownProps.id
+      	itemId: ownProps.itemId
 	};
 
   return defaultState;

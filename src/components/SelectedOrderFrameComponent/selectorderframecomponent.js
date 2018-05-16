@@ -19,7 +19,7 @@ class SelectedOrderFrame extends Component {
               <SelectedOrderContainer
                 itemTitle={item.itemTitle}
                 quantity={item.quantity}
-                key={item.itemId}
+                itemId={item.itemId}
               />
             )}
           <br></br>

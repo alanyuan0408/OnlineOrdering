@@ -6,9 +6,11 @@ import SelectedOrder from "./selectedOrderComponent";
 import { clearOrders } from "../../actions/index";
 
 const mapStateToProps = (state, props) => {
+	var order = state.orders[props.itemId]
+
 	const defaultState = {
-		quantity: props.quantity,
-		itemTitle: props.itemTitle,
+		quantity: order.quantity,
+		itemTitle: order.itemTitle,
 	};
   return defaultState;
 };

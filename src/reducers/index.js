@@ -6,17 +6,18 @@ const InitOrderState = (ItemsGroup) => {
 
 	for (var item in ItemsGroup){
 
+		// Set the Orders as a set of Value: Key
 		var tempItem = ItemsGroup[item];
-		orders.push({
+		orders[tempItem.id] = {
 			itemId: tempItem.id,
 			itemTitle: tempItem.itemTitle,
 			itemDescription: tempItem.itemDescription,
 			quantity: 0
-		})
+		}
 	}
 
 	return {
-		orders: orders
+		orders
 	};
 }
 
@@ -25,7 +26,7 @@ const rootReducer = (state =
 
   switch (action.type) {
     case ADD_ORDER:
-    	return { ...state, orders: [...state.orders, action.payload] };
+    	return { ...state, orders: addOrder(action.payload, state.orders) };
    	case CLEAR_ORDERS:
    		return { ...state, orders: [] };
    	case DELETE_ORDER:
@@ -34,5 +35,11 @@ const rootReducer = (state =
     	return state;
   }
 };
+
+const addOrder = (payload, orders) => {
+	var newOrders = orders;
+	newOrders[payload.itemId].quantity = parseInt(payload.quantity);
+	return newOrders;
+}
 
 export default rootReducer;

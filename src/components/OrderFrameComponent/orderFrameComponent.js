@@ -23,7 +23,7 @@ class OrderFrame extends Component {
             <MenuSelectionContainer
                 itemTitle={item.itemTitle}
                 itemDescription={item.itemDescription}
-                key={item.id}
+                itemId={item.id}
             />
           )}
         </div>
