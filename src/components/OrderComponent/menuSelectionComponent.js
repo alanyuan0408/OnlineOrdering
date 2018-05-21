@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../css/App.css';
-import uuidv1 from "uuid";
 
 class MenuSelection extends Component {
 
@@ -39,7 +38,7 @@ class MenuSelection extends Component {
           type="number" step="1" min="0" max="20"/>
 
         <button onClick= {this.placeOrder}>
-        { this.props.quantity == 0 ? "Place Order" : "Modify Order"}
+        { this.props.quantity === 0 ? "Place Order" : "Modify Order"}
          </button>
         <button onClick= {this.props.deleteOrder}>Delete Order </button>
       </div>

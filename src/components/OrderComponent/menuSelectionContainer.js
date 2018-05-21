@@ -1,12 +1,9 @@
-import React from "react";
 import { connect } from "react-redux";
-import store from "../../stores/index";
 
 import MenuSelection from "./menuSelectionComponent";
 import { addOrder, deleteOrder } from "../../actions/index";
 
 const mapStateToProps = (state, ownProps) => {
-	var order = state.orders[ownProps.itemId]
 
 	const defaultState = {
 		itemTitle: ownProps.itemTitle,

@@ -1,9 +1,7 @@
-import React from "react";
 import { connect } from "react-redux";
-import store from "../../stores/index";
 
 import SelectedOrderFrame from "./selectorderframecomponent";
-import { addOrder, clearOrders } from "../../actions/index";
+import { clearOrders } from "../../actions/index";
 
 const mapStateToProps = (state, props) => {
 	let defaultState = {

@@ -39,7 +39,7 @@ const rootReducer = (state =
 
 const addOrder = (payload, orders) => {
 	var newOrders = orders;
-	newOrders[payload.itemId].quantity = parseInt(payload.quantity);
+	newOrders[payload.itemId].quantity = parseInt(payload.quantity, 10);
 	return newOrders;
 }
 

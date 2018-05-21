@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 
-import { Switch, Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Breadcrumb } from 'react-bootstrap';
 
 class NavComponent extends Component {

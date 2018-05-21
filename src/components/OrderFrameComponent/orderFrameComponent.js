@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import '../../css/App.css';
 
 import MenuSelectionContainer from '../OrderComponent/menuSelectionContainer';
 
 class OrderFrame extends Component {
-
-  // Main Selection Frame for listing the Items
-  constructor() {
-    super();
-  };
-
 
   render() {
 
