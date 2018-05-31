@@ -21,20 +21,20 @@ const InitOrderState = (ItemsGroup) => {
 	};
 }
 
-const rootReducer = (state =
+const orderReducer = (state =
 	InitOrderState(PizzaItems.concat(DrinkItems,SideItems)), action) => {
 
-  switch (action.type) {
-    case ADD_ORDER:
-    	return { ...state, orders: addOrder(action.payload, state.orders) };
-   	case CLEAR_ORDERS:
-   		var newState = InitOrderState(PizzaItems.concat(DrinkItems,SideItems))
-   		return newState ;
-   	case DELETE_ORDER:
-   		return { ...state, orders: deleteOrder(action.payload, state.orders) };
-    default:
-    	return state;
-  }
+	switch (action.type) {
+	    case ADD_ORDER:
+	    	return { ...state, orders: addOrder(action.payload, state.orders) };
+	   	case CLEAR_ORDERS:
+	   		var newState = InitOrderState(PizzaItems.concat(DrinkItems,SideItems))
+	   		return newState ;
+	   	case DELETE_ORDER:
+	   		return { ...state, orders: deleteOrder(action.payload, state.orders) };
+	    default:
+	    	return state;
+	}
 };
 
 const addOrder = (payload, orders) => {
@@ -49,4 +49,4 @@ const deleteOrder = (payload, orders) => {
 	return newOrders;
 }
 
-export default rootReducer;
+export default orderReducer;

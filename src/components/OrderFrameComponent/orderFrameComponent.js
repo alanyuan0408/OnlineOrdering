@@ -17,6 +17,7 @@ class OrderFrame extends Component {
                 itemTitle={item.itemTitle}
                 itemDescription={item.itemDescription}
                 itemId={item.id}
+                key={item.id}
             />
           )}
         </div>

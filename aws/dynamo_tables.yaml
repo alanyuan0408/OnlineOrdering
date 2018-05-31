@@ -1,19 +1,20 @@
 ---
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Serverless Dynamo tables
+
 Resources:
-  CustomerDynamoDBTable: 
+  CustomerDynamoDBTable:
     Type: "AWS::DynamoDB::Table"
-    Properties: 
+    Properties:
       AttributeDefinitions:
-        - 
+        -
           AttributeName: "CustomerID"
           AttributeType: "S"
-      KeySchema: 
-        - 
+      KeySchema:
+        -
           AttributeName: "CustomerID"
           KeyType: "HASH"
-      ProvisionedThroughput: 
+      ProvisionedThroughput:
         ReadCapacityUnits: "5"
         WriteCapacityUnits: "5"
 
@@ -25,7 +26,7 @@ Resources:
       WebsiteConfiguration:
         IndexDocument: index.html
     DeletionPolicy: Retain
-    
+
   BucketPolicy:
     Type: 'AWS::S3::BucketPolicy'
     Properties:
@@ -37,7 +38,7 @@ Resources:
             Effect: Allow
             Principal: '*'
             Action: 's3:GetObject'
-            Resource: !Join 
+            Resource: !Join
               - ''
               - - 'arn:aws:s3:::'
                 - !Ref S3Bucket
@@ -47,7 +48,7 @@ Resources:
 Outputs:
   CustomerDynamoDBTableOutput:
     Description: "Customer DynamoDB Table"
-    Value: 
+    Value:
       !Ref CustomerDynamoDBTable
     Export:
       Name:
@@ -57,17 +58,16 @@ Outputs:
     Description: Name of S3 bucket to hold website content
     Value:
       !Ref S3Bucket
-    Export: 
+    Export:
       Name:
-        Fn::Sub: "${AWS::StackName}-S3Bucket"  
+        Fn::Sub: "${AWS::StackName}-S3Bucket"
 
   S3BucketWebsiteUrl:
     Description: Returns the Amazon S3 website endpoint for the specificed bucket
-    Value: !Join 
+    Value: !Join
       - ''
       - - 's3://'
         - !Ref S3Bucket
-    Export: 
+    Export:
       Name:
-        Fn::Sub: "${AWS::StackName}-S3Bucket-WebsiteURL"  
-   
+        Fn::Sub: "${AWS::StackName}-S3Bucket-WebsiteURL"

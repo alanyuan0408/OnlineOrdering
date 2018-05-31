@@ -5,7 +5,7 @@ import { clearOrders } from "../../actions/index";
 
 const mapStateToProps = (state, props) => {
 	let defaultState = {
-		orders: state.orders
+		orders: state.orderReducer.orders
 	};
   return defaultState;
 };

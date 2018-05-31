@@ -4,7 +4,7 @@ import SelectedOrder from "./selectedOrderComponent";
 import { deleteOrder } from "../../actions/index";
 
 const mapStateToProps = (state, props) => {
-	var order = state.orders[props.itemId]
+	var order = state.orderReducer.orders[props.itemId]
 
 	const defaultState = {
 		quantity: order.quantity,

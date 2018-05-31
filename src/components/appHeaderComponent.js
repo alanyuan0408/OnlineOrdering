@@ -7,8 +7,8 @@ class AppHeader extends Component {
   render() {
     return (
         <div className="App-header">
-          <h1 className="App-title">{this.props.headerTitle}</h1>
-        </div>
+          <h1 className="App-title">{this.props.headerTitle}</h1>''
+	    </div>
     );
   }
 

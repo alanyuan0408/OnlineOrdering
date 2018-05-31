@@ -14,6 +14,7 @@ class SelectedOrderFrame extends Component {
                 itemId={item.itemId}
                 itemTitle={item.itemTitle}
                 itemDescription={item.itemDescription}
+                key = {item.itemId}
               />
             )}
 

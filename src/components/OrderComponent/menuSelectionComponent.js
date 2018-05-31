@@ -3,8 +3,8 @@ import '../../css/App.css';
 
 class MenuSelection extends Component {
 
-  constructor() {
-      super();
+  constructor(props) {
+      super(props);
 
       this.state ={
         selectedValue: 0

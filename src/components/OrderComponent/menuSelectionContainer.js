@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
 	const defaultState = {
 		itemTitle: ownProps.itemTitle,
 		itemDescription: ownProps.itemDescription,
-		quantity: state.orders[ownProps.itemId].quantity,
+		quantity: state.orderReducer.orders[ownProps.itemId].quantity,
       	itemId: ownProps.itemId
 	};
 
