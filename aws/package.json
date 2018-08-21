@@ -6,7 +6,7 @@
   "config": {
     "s3BucketName": "alanbuildbucket",
     "s3UploadBucket": "dynamotables-s3bucket-i1t2idkfixws",
-    "region": "us-east-2",
+    "region": "us-east-1",
     "cloudFormationStackName": "AwsServerlessExpressStack",
     "accountId": "335783331232",
     "dynamoStackName": "DynamoTables"
