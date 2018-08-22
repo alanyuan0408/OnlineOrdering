@@ -19,7 +19,7 @@ class App extends Component {
 
     this.state = {
       title: "Online Ordering App",
-      AwsBaseUrl: "https://0z45mil1tb.execute-api.us-east-2.amazonaws.com/prod/"
+      AwsBaseUrl: "https://2ev6203eyi.execute-api.us-east-2.amazonaws.com/prod/"
     }
 
   };

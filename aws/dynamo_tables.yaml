@@ -73,7 +73,7 @@ Outputs:
       - ''
       - - 'http://'
         - !Ref S3Bucket
-        - ".s3-website-"
+        - ".s3-website."
         - !Ref AWS::Region
         - ".amazonaws.com"
     Export:

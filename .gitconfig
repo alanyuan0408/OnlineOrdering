@@ -1,6 +1,8 @@
 [user]
 	email = alan.yuan@mail.utoronto.ca
-	name = Alan Yuan
+	name = alan.yuan@mail.utoronto.ca
 [http]
 	sslVersion = tlsv1.2
 	sslVersion = tlsv1.2
+	sslVersion = tlsv1.2
+	sslbackend = openssl
