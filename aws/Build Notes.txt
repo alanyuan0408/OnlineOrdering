@@ -1,1 +1,7 @@
 // Notes for Stuff
+
+-> Create-Bucket => Creates the s3 bucket for the to run the Yaml file conversions
+
+-> package-deploy => Builds the cloudformation.yaml files and deploys the lambdas
+
+-> Web-Build => Builds the web assets for deployment. 

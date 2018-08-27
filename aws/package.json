@@ -1,31 +1,32 @@
 {
   "name": "aws-serverless-express-example",
   "version": "2.1.1",
-  "description": "Example application for running a Node Express app on AWS Lambda using Amazon API Gateway.",
+  "description": "Example application fb running a Node Express app on AWS Lambda using Amazon API Gateway.",
   "main": "lambda.js",
   "config": {
-    "s3BucketName": "alanbuildbucket",
-    "s3UploadBucket": "dynamotables-s3bucket-i1t2idkfixws",
+    "s3BuildBucketName": "alanbuildbucket",
+    "s3UploadBucket": "dynamostackname-s3bucket-i2cgvfba6yc",
     "region": "us-east-1",
-    "cloudFormationStackName": "AwsServerlessExpressStack",
     "accountId": "335783331232",
-    "dynamoStackName": "DynamoTables"
+    "cloudFormationStackName": "AwsServerlessExpressStack",
+    "dynamoStackName": "dynamoStackName"
   },
   "scripts": {
-    "create-bucket": "aws s3 mb s3://%npm_package_config_s3BucketName% --region %npm_package_config_region%",
-    "delete-bucket": "aws s3 rb s3://%npm_package_config_s3BucketName% --region %npm_package_config_region%",
-    "package": "aws cloudformation package --template ./cloudformation.yaml --s3-bucket %npm_package_config_s3BucketName% --output-template packaged-sam.yaml --region %npm_package_config_region%",
+    "create-bucket": "aws s3 mb s3://%npm_package_config_s3BuildBucketName% --region %npm_package_config_region%",
+    "create-s3UploadBucket": "aws s3 mb s3://%npm_package_config_s3UploadBucket% --region %npm_package_config_region%",
+    "delete-bucket": "aws s3 rb s3://%npm_package_config_s3BuildBucketName% --region %npm_package_config_region%",
+    "package": "aws cloudformation package --template ./cloudformation.yaml --s3-bucket %npm_package_config_s3BuildBucketName% --output-template packaged-sam.yaml --region %npm_package_config_region%",
     "deploy-lambda": "aws cloudformation deploy --template-file packaged-sam.yaml --stack-name %npm_package_config_cloudFormationStackName% --capabilities CAPABILITY_IAM --region %npm_package_config_region% --parameter-overrides DynamoStack=%npm_package_config_dynamoStackName%",
     "package-deploy": "npm run package && npm run deploy-lambda",
     "deploy-web": "npm run web-build && npm run web-deploy",
     "web-build": "cd .. && npm run build",
-    "web-deploy": "cd .. && aws s3 cp build s3://%npm_package_config_s3UploadBucket% --recursive",
-    "deploy-dynamo": "aws cloudformation deploy --template-file ./dynamo_tables.yaml --stack-name %npm_package_config_dynamoStackName% --capabilities CAPABILITY_IAM --region %npm_package_config_region% --parameters BucketName=%npm_package_config_s3UploadBucket%",
+    "web-deploy": "cd .. && aws s3 cp build s3://%npm_package_config_s3UploadBucket% --recursive --acl public-read-write",
+    "deploy-dynamo": "aws cloudformation deploy --template-file ./dynamotables.yaml --stack-name %npm_package_config_dynamoStackName% --capabilities CAPABILITY_IAM --region %npm_package_config_region%",
     "delete-dynamo-stack": "aws cloudformation delete-stack --stack-name %npm_package_config_dynamoStackName% --region %npm_package_config_region%",
     "delete-lambda-stack": "aws cloudformation delete-stack --stack-name %npm_package_config_cloudFormationStackName% --region %npm_package_config_region%",
     "wait-lambda-stack-delete": "aws cloudformation wait stack-delete-complete --stack-name %npm_package_config_cloudFormationStackName%",
     "delete-stack": "npm run delete-lambda-stack && (npm run wait-lambda-stack-delete && npm run delete-dynamo-stack)",
-    "setup": "npm install && (aws s3api get-bucket-location --bucket %npm_package_config_s3BucketName% --region %npm_package_config_region% || npm run create-bucket) && npm run package-deploy"
+    "setup": "npm install && (aws s3api get-bucket-location --bucket %npm_package_config_s3BuildBucketName% --region %npm_package_config_region% || npm run create-bucket) && npm run package-deploy"
   },
   "license": "Apache-2.0",
   "dependencies": {
