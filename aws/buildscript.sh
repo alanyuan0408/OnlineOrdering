@@ -38,11 +38,21 @@ aws cloudformation package \
 	--output-template-file packaged-sam.yaml \
 	--template-file ./cloudformation.yaml
 
-aws cloudformation deploy 
-	--template-file packaged-sam.yaml \
-	--stack-name %npm_package_config_cloudFormationStackName% \
+echo "4) Deploy Data Stack "
+
+aws cloudformation deploy \
+	--template-file ./dynamotables.yaml \
+	--stack-name $DynamoStackName \
 	--capabilities CAPABILITY_IAM \
-	--region %npm_package_config_region% \ 
-	--parameter-overrides DynamoStack=%npm_package_config_dynamoStackName%
+	--region $awsRegion \
+
+echo "5) Deploy Application Stack"
+
+aws cloudformation deploy
+	--template-file packaged-sam.yaml \
+	--stack-name $CloudFormationStackName \
+	--capabilities CAPABILITY_IAM \
+	--region $awsRegion \
+	--parameter-overrides DynamoStack=$DynamoStackName
 
 echo "Build Script Complete"
