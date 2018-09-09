@@ -30,7 +30,7 @@ Parameters:
 Resources:
   APIGatewayApi:
     Properties:
-      DefinitionUri: s3://alanbuildbucket/394dc303cf7f7b838f5e9094c38ea8e7
+      DefinitionUri: s3://s3buildbucket/394dc303cf7f7b838f5e9094c38ea8e7
       StageName: prod
       Variables:
         CustomerLambdaFunctionName:
@@ -40,7 +40,7 @@ Resources:
     Type: AWS::Serverless::Api
   CustomerLambda:
     Properties:
-      CodeUri: s3://alanbuildbucket/80ad8aaecfdb816f94d9a48a999a8177
+      CodeUri: s3://s3buildbucket/80ad8aaecfdb816f94d9a48a999a8177
       Environment:
         Variables:
           TABLE_NAME:
@@ -125,7 +125,7 @@ Resources:
     Type: AWS::IAM::Role
   OrderLambda:
     Properties:
-      CodeUri: s3://alanbuildbucket/5b2de556101fa2dac0e6d9a76f0c2817
+      CodeUri: s3://s3buildbucket/5b2de556101fa2dac0e6d9a76f0c2817
       Events:
         ProxyApiGreedy:
           Properties:
