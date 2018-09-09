@@ -93,7 +93,7 @@ Resources:
         Variables:
           TABLE_NAME:
             Fn::ImportValue:
-              Fn::Sub: "${DynamoStack}-CustomerDynamoDBTable"
+              Fn::Sub: '${DynamoStack}-CustomerDynamoDBTable'
 
   OrderLambdaApiGatewayExecutionPermission:
     Type: AWS::Lambda::Permission
@@ -105,7 +105,7 @@ Resources:
         - ''
         - - 'arn:aws:execute-api:'
           - !Ref AWS::Region
-          - ":"
+          - ":" 
           - !Ref AWS::AccountId
           - ":"
           - !Ref APIGatewayApi
@@ -150,9 +150,10 @@ Outputs:
     Description: Invoke URL for your API. Clicking this link will perform a GET request
       on the root resource of your API.
     Value: !Join
-      - ''
-      - - https://
-        - !Ref APIGatewayApi
-        - ".execute-api."
-        - !Ref AWS::Region
-        - ".amazonaws.com/prod/"
+        - ''
+        - - https://
+          - Fn::ImportValue: 
+              Fn::Sub: "${DynamoStack}-CustomerDynamoDBTable"
+          - '.s3-website-'
+          - !Ref AWS::Region
+          - '.amazonaws.com'

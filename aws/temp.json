@@ -1,0 +1,41 @@
+{
+    "Stacks": [
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:335783331232:stack/dynamoStackName/73e53370-b40f-11e8-9fe9-503aca4a5899", 
+            "Description": "Serverless Dynamo tables", 
+            "Tags": [], 
+            "Outputs": [
+                {
+                    "Description": "Returns the Amazon S3 website endpoint for the specificed bucket", 
+                    "ExportName": "dynamoStackName-S3Bucket-WebsiteURL", 
+                    "OutputKey": "S3BucketWebsiteUrl", 
+                    "OutputValue": "http://dynamostackname-s3bucket-1gflcjpdu4hl4.s3-website.us-east-1.amazonaws.com"
+                }, 
+                {
+                    "Description": "Customer DynamoDB Table", 
+                    "ExportName": "dynamoStackName-CustomerDynamoDBTable", 
+                    "OutputKey": "CustomerDynamoDBTableOutput", 
+                    "OutputValue": "dynamoStackName-CustomerDynamoDBTable-QWBNXL95YLXD"
+                }, 
+                {
+                    "Description": "Name of S3 bucket to hold website content", 
+                    "ExportName": "dynamoStackName-S3Bucket", 
+                    "OutputKey": "S3BucketName", 
+                    "OutputValue": "dynamostackname-s3bucket-1gflcjpdu4hl4"
+                }
+            ], 
+            "EnableTerminationProtection": false, 
+            "CreationTime": "2018-09-09T09:05:09.696Z", 
+            "Capabilities": [
+                "CAPABILITY_IAM"
+            ], 
+            "StackName": "dynamoStackName", 
+            "NotificationARNs": [], 
+            "StackStatus": "CREATE_COMPLETE", 
+            "DisableRollback": false, 
+            "RollbackConfiguration": {}, 
+            "ChangeSetId": "arn:aws:cloudformation:us-east-1:335783331232:changeSet/awscli-cloudformation-package-deploy-1536483907/a190e89b-a12f-41c3-8395-d197bd7fad14", 
+            "LastUpdatedTime": "2018-09-09T09:05:15.254Z"
+        }
+    ]
+}

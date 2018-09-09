@@ -8,10 +8,11 @@ Outputs:
       Fn::Join:
       - ''
       - - https://
-        - Ref: APIGatewayApi
-        - .execute-api.
+        - Fn::ImportValue:
+            Fn::Sub: ${DynamoStack}-CustomerDynamoDBTable
+        - .s3-website-
         - Ref: AWS::Region
-        - .amazonaws.com/prod/
+        - .amazonaws.com
   LambdaFunctionConsoleUrl:
     Description: Console URL for the Lambda Function.
     Value:

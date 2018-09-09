@@ -45,7 +45,6 @@ else
 	echo " - $s3UploadBucket already exists, uploading build scripts"
 fi
 
-
 echo "3) Package CloudFormation Files"
 
 # Upload CloudFormation Package to the Build Bucket
@@ -60,7 +59,7 @@ echo "4) Deploy Data Stack "
 if aws cloudforamtion get-stack-policy \
 	--stack-name $DynamoStackName \
 	--region $awsRegion \
-	2>&1 | grep -q '$DynamoStackName does not exist' ; then
+	2>&1 | grep -q 'error' ; then
 
 	# Dynamo Tables Stack already exists
 	echo " - Making New Dynamo Stack"
@@ -71,8 +70,13 @@ if aws cloudforamtion get-stack-policy \
 		--region $awsRegion
 else 
 
-	echo " - $s3BuildBucketName already exists, uploading build scripts"
+	echo " - $DynamoStackName already exists, uploading build scripts"
 fi 
+
+# Grab Name of Web Upload Bucket
+aws cloudformation describe-stacks \
+	--stack-name $DynamoStackName \
+	> temp.json
 
 echo "5) Deploy Application Stack"
 
