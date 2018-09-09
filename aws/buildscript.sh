@@ -9,6 +9,8 @@ awsRegion="us-east-1"
 accountId="335783331232"
 
 CloudFormationStackName="AWS_Serverless_stack-"$rand_num
+
+#DynamoStack Should be persistent
 DynamoStackName="dyanmoStackName"
 
 s3BuildBucketName="alanbuildbucket"
