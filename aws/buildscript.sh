@@ -28,7 +28,7 @@ if aws s3api get-bucket-location \
 	aws s3 mb s3://$s3BuildBucketName --region $awsRegion
 else
 
-	echo " - $s3BuildBucketName already exists, uploading build scripts"
+	echo " - $s3BuildBucketName already exists, skip building bucket"
 fi
 
 # Create S3 Upload Bucket
@@ -42,7 +42,7 @@ if aws s3api get-bucket-location \
 	aws s3 mb s3://$s3UploadBucket --region $awsRegion
 else
 
-	echo " - $s3UploadBucket already exists, uploading build scripts"
+	echo " - $s3UploadBucket already exists, skip building bucket"
 fi
 
 echo "3) Package CloudFormation Files"
@@ -73,10 +73,14 @@ else
 	echo " - $DynamoStackName already exists, uploading build scripts"
 fi 
 
+TempFileName="temp.json"
+
 # Grab Name of Web Upload Bucket
 aws cloudformation describe-stacks \
 	--stack-name $DynamoStackName \
-	> temp.json
+	> $TempFileName
+
+webUploadBucketName=$(python.exe ./scripts/pythonscript.py $TempFileName)
 
 echo "5) Deploy Application Stack"
 
@@ -90,14 +94,20 @@ aws cloudformation deploy \
 
 echo "6) Deploy Web-build and Web-Deploys"
 
+echo "WebUploadBucket: "$webUploadBucketName
+
 cd ..
 
 npm run build
 
-aws s3 cp build s3://$s3UploadBucket \
+aws s3 cp build s3://$webUploadBucketName \
 	--recursive \
 	--acl public-read-write
 
 cd ./aws
 
 echo "Build Script Complete"
+
+echo "Website can be accessed via: 
+
+http://"$webUploadBucketName".s3-website-"$awsRegion".amazonaws.com"
