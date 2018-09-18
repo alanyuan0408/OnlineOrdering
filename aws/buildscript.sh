@@ -80,7 +80,7 @@ aws cloudformation describe-stacks \
 	--stack-name $DynamoStackName \
 	> $TempFileName
 
-webUploadBucketName=$(python.exe ./scripts/pythonscript.py $TempFileName)
+webUploadBucketName=$(python.exe ./scripts/pythonscript.py $TempFileName S3BucketName)
 
 echo "5) Deploy Application Stack"
 

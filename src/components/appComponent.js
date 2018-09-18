@@ -19,13 +19,12 @@ class App extends Component {
 
     this.state = {
       title: "Online Ordering App",
-      AwsBaseUrl: "https://2ev6203eyi.execute-api.us-east-2.amazonaws.com/prod/"
+      AwsBaseUrl: process.env.REACT_APP_AWS_BASE_URL
     }
 
   };
 
   render() {
-
     return (
       <div>
         <AppHeader headerTitle ="Online Ordering App"/>
