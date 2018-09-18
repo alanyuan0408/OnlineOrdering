@@ -1,0 +1,39 @@
+{
+    "Stacks": [
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:335783331232:stack/AWS-Serverless-stack-7880/84b97930-bb22-11e8-8579-503acac41efd", 
+            "Description": "Serverless Express Application/API powered by API Gateway and Lambda", 
+            "Parameters": [
+                {
+                    "ParameterValue": "dynamoStackName", 
+                    "ParameterKey": "DynamoStack"
+                }
+            ], 
+            "Tags": [], 
+            "Outputs": [
+                {
+                    "Description": "Invoke URL for your API. Clicking this link will perform a GET request on the root resource of your API.", 
+                    "OutputKey": "ApiUrl", 
+                    "OutputValue": "https://dynamoStackName-CustomerDynamoDBTable-QWBNXL95YLXD.s3-website-us-east-1.amazonaws.com"
+                }, 
+                {
+                    "Description": "Console URL for the Lambda Function.", 
+                    "OutputKey": "LambdaFunctionConsoleUrl", 
+                    "OutputValue": "https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions/AWS-Serverless-stack-7880-CustomerLambda-6ZATY3DRFQ7O"
+                }
+            ], 
+            "EnableTerminationProtection": false, 
+            "CreationTime": "2018-09-18T09:09:16.516Z", 
+            "Capabilities": [
+                "CAPABILITY_IAM"
+            ], 
+            "StackName": "AWS-Serverless-stack-7880", 
+            "NotificationARNs": [], 
+            "StackStatus": "CREATE_COMPLETE", 
+            "DisableRollback": false, 
+            "RollbackConfiguration": {}, 
+            "ChangeSetId": "arn:aws:cloudformation:us-east-1:335783331232:changeSet/awscli-cloudformation-package-deploy-1537261755/bc7064e8-8e38-43f2-bb9a-55058c294d0c", 
+            "LastUpdatedTime": "2018-09-18T09:09:22.167Z"
+        }
+    ]
+}

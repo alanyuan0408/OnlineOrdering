@@ -98,6 +98,19 @@ echo "WebUploadBucket: "$webUploadBucketName
 
 cd ..
 
+ApiGateway="ApiGateway.json"
+
+# Grab Name of Web Upload Bucket
+aws cloudformation describe-stacks \
+	--stack-name $CloudFormationStackName \
+	> $ApiGateway
+
+
+
+awsBaseUrl=$(python.exe ./aws/scripts/pythonscript.py $ApiGateway ApiUrl)
+
+echo "REACT_APP_AWS_BASE_URL=$awsBaseUrl" > ".env"
+
 npm run build
 
 aws s3 cp build s3://$webUploadBucketName \
