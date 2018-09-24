@@ -1,5 +1,5 @@
 import { ADD_ORDER, CLEAR_ORDERS, DELETE_ORDER } from "../constants/action-types";
-import { PizzaItems, DrinkItems, SideItems } from '../assets/MenuItems';
+import { PizzaInfo, DrinkInfo, SideItemInfo } from '../assets/MenuItems';
 
 const InitOrderState = (ItemsGroup) => {
 	var orders = [];
@@ -20,6 +20,10 @@ const InitOrderState = (ItemsGroup) => {
 		orders
 	};
 }
+
+const PizzaItems = PizzaInfo.Items;
+const DrinkItems = DrinkInfo.Items;
+const SideItems = SideItemInfo.Items;
 
 const orderReducer = (state =
 	InitOrderState(PizzaItems.concat(DrinkItems,SideItems)), action) => {

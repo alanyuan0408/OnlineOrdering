@@ -1,4 +1,6 @@
-const PizzaItems =
+import { BASE_ORDER_ROUTE } from "../constants/route-constants";
+
+const PizzaItems = 
 [
 	{
 		id: 1,
@@ -30,7 +32,7 @@ const PizzaItems =
 		itemTitle: "Pizza F",
 		itemDescription: "Pizza F Description"
 	}
-]
+];
 
 const DrinkItems =
 [
@@ -54,7 +56,7 @@ const DrinkItems =
 		itemTitle: "Drink D",
 		itemDescription: "Drink D Description"
 	}
-]
+];
 
 const SideItems =
 [
@@ -78,10 +80,22 @@ const SideItems =
 		itemTitle: "SideItem D",
 		itemDescription: "SideItem D Description"
 	}
-]
+];
 
-module.exports = {
-	PizzaItems,
-	DrinkItems,
-	SideItems
-}
+export const PizzaInfo = {
+	Title: "Pizza Menu",
+	Items: PizzaItems,
+	Route: BASE_ORDER_ROUTE + "pizza"	
+};
+
+export const DrinkInfo = {
+	Title: "Drinks Menu",
+	Items: DrinkItems,
+	Route: BASE_ORDER_ROUTE + "drinks"	
+};
+
+export const SideItemInfo = {
+	Title: "Sides Menu",
+	Items: SideItems,
+	Route: BASE_ORDER_ROUTE + "sides"	
+};

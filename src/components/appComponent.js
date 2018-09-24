@@ -9,7 +9,7 @@ import SelectOrderFrameContainer from './SelectedOrderFrameComponent/selectorder
 import { Switch, Route } from "react-router-dom";
 import { Grid } from 'react-bootstrap';
 // Initialization Values
-import { PizzaItems, DrinkItems, SideItems } from '../assets/MenuItems';
+import { PizzaInfo, DrinkInfo, SideItemInfo } from '../assets/MenuItems';
 
 class App extends Component {
   // Base App Component that contains the Order Frame,
@@ -37,29 +37,29 @@ class App extends Component {
               <NavComponent />
 
               <Switch>
-                <Route exact path="/" render={ () =>
+                <Route exact path = { PizzaInfo.Route } render={ () =>
                     <OrderFrameContainer
-                        Title = "Pizza Menu"
+                        Title = { PizzaInfo.Title }
                         AwsBaseUrl = { this.state.AwsBaseUrl }
-                        MenuItems = { PizzaItems }
+                        MenuItems = { PizzaInfo.Items }
                     />
                   }
                 />
 
-                <Route path="/drinks" render={ () =>
+                <Route path = { DrinkInfo.Route } render={ () =>
                     <OrderFrameContainer
-                      Title = "Drinks Menu"
+                      Title = { DrinkInfo.Title }
                       AwsBaseUrl = { this.state.AwsBaseUrl }
-                      MenuItems = { DrinkItems }
+                      MenuItems = { DrinkInfo.Items }
                     />
                   }
                 />
 
-                <Route path="/sides" render={ () =>
+                <Route path = { SideItemInfo.Route } render={ () =>
                     <OrderFrameContainer
-                      Title = "Sides Menu"
+                      Title = { SideItemInfo.Title }
                       AwsBaseUrl = { this.state.AwsBaseUrl }
-                      MenuItems = { SideItems }
+                      MenuItems = { SideItemInfo.Items }
                     />
                   }
                 />
