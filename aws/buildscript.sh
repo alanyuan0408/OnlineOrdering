@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "1) Build Script"
 
 # Generate Random Number of Builds
