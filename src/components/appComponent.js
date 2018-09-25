@@ -10,6 +10,7 @@ import { Switch, Route } from "react-router-dom";
 import { Grid } from 'react-bootstrap';
 // Initialization Values
 import { PizzaInfo, DrinkInfo, SideItemInfo } from '../assets/MenuItems';
+import { Button } from 'reactstrap';
 
 class App extends Component {
   // Base App Component that contains the Order Frame,
@@ -27,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <AppHeader headerTitle ="Online Ordering App"/>
+        <AppHeader headerTitle = { this.state.title }/>
 
           <div className="OrderFrame">
             <Grid>
@@ -37,7 +38,7 @@ class App extends Component {
               <NavComponent />
 
               <Switch>
-                <Route exact path = { PizzaInfo.Route } render={ () =>
+                <Route path = { PizzaInfo.Route } render={ () =>
                     <OrderFrameContainer
                         Title = { PizzaInfo.Title }
                         AwsBaseUrl = { this.state.AwsBaseUrl }
