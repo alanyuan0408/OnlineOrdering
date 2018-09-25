@@ -5,17 +5,16 @@ class SelectedOrder extends Component {
 
   render() {
     return (
-      <div>
-        { this.props.quantity > 0 ? (
+        <div className="col-8">
+            { this.props.quantity > 0 ? (
 
-            <div>
-              <p>{this.props.itemTitle}: {this.props.quantity} (
-                <a onClick={this.props.deleteOrder} >Remove Order</a>
-              )</p>
-            </div>
+                <div>
+                    <p>{this.props.itemTitle}: {this.props.quantity} (
+                        <a onClick={this.props.deleteOrder} >Remove Order</a>
+                    )</p>
+                </div>
 
-          ) : null
-        }
+            ) : null }
       </div>
     );
   }

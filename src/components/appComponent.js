@@ -30,10 +30,8 @@ class App extends Component {
         <div className="container">
             <AppHeader headerTitle = { this.state.title } />
 
-              <div className="OrderFrame">
-                <Grid>
-                    <SelectOrderFrameContainer />
-
+            <div className="OrderFrame">
+                <div className-"row">
                     <NavComponent />
 
                     <Switch>
@@ -61,7 +59,9 @@ class App extends Component {
                             />
                         } />
                     </Switch>
-                </Grid>
+
+                    <SelectOrderFrameContainer />
+                </div>
             </div>
 
             <AppFooter footerTexts ="All Rights Reserved"/>
