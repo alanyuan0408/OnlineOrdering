@@ -27,7 +27,8 @@ class App extends Component {
 
   render() {
     return (
-        <div className="container">
+        <div className="container-large">
+
             <AppHeader headerTitle = { this.state.title } />
 
             <div className="OrderFrame">

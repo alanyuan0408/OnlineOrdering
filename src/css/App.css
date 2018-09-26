@@ -1,47 +1,56 @@
-
 .App-header {
-  background-color: #222;
-  height: 80px;
-  padding: 20px;
-  color: white;
-  text-align: center;
+    background-color: #222;
+    height: 120px;
+    color: white;
+    margin-bottom: 25px;
 }
 
 .App-title {
-  font-size: 2.5em;
+    padding: 30px;
+    font-size: 2.5em;
+}
+
+.Address-Block {
+    padding: 15px;
+    display: block;
+    font-size: 0.8em;
+}
+
+.Login-Block {
+    padding: 15px;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 .App-footer {
-  background-color: #222;
-  height: 80px;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-  text-align: center;
+    background-color: #222;
+    height: 80px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
 }
 
 .footer-text {
-  font-size: 1em;
+    font-size: 1em;
 }
 
 .menu-title {
-  font-size: 1.75em;
+    font-size: 1.75em;
 }
 
 .menu-selection {
-  border-color: black;
-  width: 30vw;
-  left: 35vw;
-  position: relative;
+    border-color: black;
+    width: 30vw;
+    left: 35vw;
+    position: relative;
 }
 
 .OrderFrame {
-  height: calc(100vh - 160px);
-  overflow-y: scroll;
+    height: calc(100vh - 160px);
+    overflow-y: scroll;
 }
