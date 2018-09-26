@@ -26,10 +26,10 @@ class App extends Component {
 
   render() {
     return (
-        <div className="container">
+        <div className="container-large">
+
             <AppHeader headerTitle = { this.state.title } />
 
-              <div className="OrderFrame">
                 <Grid>
                     <SelectOrderFrameContainer />
 
@@ -64,8 +64,6 @@ class App extends Component {
                         />
                     </Switch>
                 </Grid>
-            </div>
-
             <AppFooter footerTexts ="All Rights Reserved"/>
         </div>
     );
