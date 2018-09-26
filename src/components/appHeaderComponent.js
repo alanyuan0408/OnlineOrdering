@@ -7,10 +7,10 @@ class AppHeader extends Component {
 	render() {
 	    return (
 	    	<div className="row App-header">
-	    		<div className="col-2">
+	    		<div className="col-1">
 	    		</div>
 
-	    		<div className="col-5 App-title">
+	    		<div className="col-6 App-title">
 	        		<h1>{this.props.headerTitle}</h1>
 	        	</div>
 
