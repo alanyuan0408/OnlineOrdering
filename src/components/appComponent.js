@@ -31,7 +31,7 @@ class App extends Component {
             <AppHeader headerTitle = { this.state.title } />
 
             <div className="OrderFrame">
-                <div className-"row">
+                <div className="row">
                     <NavComponent />
 
                     <Switch>
