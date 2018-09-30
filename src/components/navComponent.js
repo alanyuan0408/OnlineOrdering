@@ -11,13 +11,11 @@ class NavComponent extends Component {
     // Header Component, top bar of the app
     render() {
         return (
-            <div className="col-8">
-                <Breadcrumb>
-                    <Breadcrumb.Item active><Link to={ PizzaInfo.Route } >Pizza Menu </Link></Breadcrumb.Item>
-                    <Breadcrumb.Item ><Link to={ DrinkInfo.Route }>Drinks Menu </Link></Breadcrumb.Item>
-                    <Breadcrumb.Item ><Link to={ SideItemInfo.Route }>Sides Menu </Link></Breadcrumb.Item>
-                </Breadcrumb>
-            </div>
+            <Breadcrumb>
+                <Breadcrumb.Item active><Link to={ PizzaInfo.Route } >Pizza Menu </Link></Breadcrumb.Item>
+                <Breadcrumb.Item ><Link to={ DrinkInfo.Route }>Drinks Menu </Link></Breadcrumb.Item>
+                <Breadcrumb.Item ><Link to={ SideItemInfo.Route }>Sides Menu </Link></Breadcrumb.Item>
+            </Breadcrumb>
         );
     }
 }
