@@ -17,7 +17,7 @@
 }
 
 .Login-Block {
-    padding: 15px;
+    padding: 40px;
 }
 
 .App-intro {
@@ -51,6 +51,6 @@
 }
 
 .OrderFrame {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 245px);
     overflow-y: scroll;
 }

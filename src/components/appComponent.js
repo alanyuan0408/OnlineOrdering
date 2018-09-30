@@ -27,41 +27,45 @@ class App extends Component {
 
   render() {
     return (
-        <div className="container-large">
 
+        <div>
             <AppHeader headerTitle = { this.state.title } />
 
             <div className="OrderFrame">
-                <div className="row">
-                    <NavComponent />
 
-                    <Switch>
-                        <Route path = { PizzaInfo.Route } render= { () =>
-                            <OrderFrameContainer
-                                Title = { PizzaInfo.Title }
-                                AwsBaseUrl = { this.state.AwsBaseUrl }
-                                MenuItems = { PizzaInfo.Items }
-                            />
-                        } />
+                <div className="container-large">
 
-                        <Route path = { DrinkInfo.Route } render={ () =>
-                            <OrderFrameContainer
-                                Title = { DrinkInfo.Title }
-                                AwsBaseUrl = { this.state.AwsBaseUrl }
-                                MenuItems = { DrinkInfo.Items }
-                            />
-                        } />
+                    <div className="row">
+                        <NavComponent />
 
-                        <Route path = { SideItemInfo.Route } render = {() =>
-                            <OrderFrameContainer
-                                Title = { SideItemInfo.Title }
-                                AwsBaseUrl = { this.state.AwsBaseUrl }
-                                MenuItems = { SideItemInfo.Items }
-                            />
-                        } />
-                    </Switch>
+                        <Switch>
+                            <Route path = { PizzaInfo.Route } render= { () =>
+                                <OrderFrameContainer
+                                    Title = { PizzaInfo.Title }
+                                    AwsBaseUrl = { this.state.AwsBaseUrl }
+                                    MenuItems = { PizzaInfo.Items }
+                                />
+                            } />
 
-                    <SelectOrderFrameContainer />
+                            <Route path = { DrinkInfo.Route } render={ () =>
+                                <OrderFrameContainer
+                                    Title = { DrinkInfo.Title }
+                                    AwsBaseUrl = { this.state.AwsBaseUrl }
+                                    MenuItems = { DrinkInfo.Items }
+                                />
+                            } />
+
+                            <Route path = { SideItemInfo.Route } render = {() =>
+                                <OrderFrameContainer
+                                    Title = { SideItemInfo.Title }
+                                    AwsBaseUrl = { this.state.AwsBaseUrl }
+                                    MenuItems = { SideItemInfo.Items }
+                                />
+                            } />
+                        </Switch>
+
+                        <SelectOrderFrameContainer />
+                    </div>
                 </div>
             </div>
 

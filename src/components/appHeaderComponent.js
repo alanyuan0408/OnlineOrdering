@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 
+import LoginComponent from "./loginComponent";
+
 class AppHeader extends Component {
 
 	// Header Component, top bar of the app
@@ -14,26 +16,9 @@ class AppHeader extends Component {
 	        		<h1>{this.props.headerTitle}</h1>
 	        	</div>
 
-	    	    <div className="col-3">
-	    	    	<div className="row">
-	    	    		<div className="col-5">
-					    	<div className="btn-group Login-Block" role="group">
-					    		<button type="button" className="btn btn-light">&emsp;Login&emsp;</button>
-						    	<button type="button" className="btn btn-outline-secondary">&emsp;Sign Up&emsp;</button>
-					    	</div>
-					    </div>
-
-					    <div className="col-7">
-							<form>
-								<div class="form-group">
-							    	<label for="exampleFormControlInput1">Email address</label>
-							    	<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-							    	</input>
-							  	</div>
-							</form>
-					    </div>
-				    </div>
-	    		</div>
+	        	<div className="col-3">
+	        		<LoginComponent />
+	        	</div>
 
 	    		<div className="col-2">
 	        		<div className="Address-Block">
