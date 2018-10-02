@@ -16,22 +16,23 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    addOrder: article => dispatch(addOrder(article)),
-    deleteOrder: itemId => dispatch(deleteOrder(itemId)),
-  };
+    return {
+        addOrder: article => dispatch(addOrder(article)),
+        deleteOrder: itemId => dispatch(deleteOrder(itemId)),
+    };
 };
 
 const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
     return {
-      ...propsFromState,
-      ...ownProps,
-      ...propsFromDispatch,
-      deleteOrder: () => {
-      	propsFromDispatch.deleteOrder(propsFromState.itemId)
-      }
+        ...propsFromState,
+        ...ownProps,
+        ...propsFromDispatch,
+        deleteOrder: () => {
+            propsFromDispatch.deleteOrder(propsFromState.itemId)
+        }
     };
 };
+
 const MenuSelectionContainer = connect(mapStateToProps, mapDispatchToProps, mergeProps)(MenuSelection);
 
 export default MenuSelectionContainer;

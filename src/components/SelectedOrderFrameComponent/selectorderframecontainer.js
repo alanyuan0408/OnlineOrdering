@@ -7,13 +7,13 @@ const mapStateToProps = (state, props) => {
 	let defaultState = {
 		orders: state.orderReducer.orders
 	};
-  return defaultState;
+  	return defaultState;
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    clearOrders: () => dispatch(clearOrders())
-  };
+  	return {
+    	clearOrders: () => dispatch(clearOrders())
+  	};
 };
 
 const SelectOrderFrameContainer = connect(mapStateToProps, mapDispatchToProps)(SelectedOrderFrame);

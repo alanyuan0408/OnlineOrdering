@@ -5,24 +5,62 @@ import MenuSelectionContainer from '../OrderComponent/menuSelectionContainer';
 
 class OrderFrame extends Component {
 
-  render() {
+    constructor(props) {
+        super(props);
 
-    return (
+        var menuItemA = [];
+        var menuItemB =[];
+        var itr = 0;
 
-        <div>
-          <h2>{this.props.title}</h2>
+        for (var item in props.menuItems) {
+            if (itr % 2 == 0) {
+                menuItemA.push(props.menuItems[itr]);
+            } else {
+                menuItemB.push(props.menuItems[itr]);
+            }
+            itr += 1
+        }
 
-          {this.props.menuItems.map(item =>
-            <MenuSelectionContainer
-                itemTitle={item.itemTitle}
-                itemDescription={item.itemDescription}
-                itemId={item.id}
-                key={item.id}
-            />
-          )}
-        </div>
-    );
-  }
+        this.state = {
+            menuItemLeft: menuItemA,
+            menuItemsRight: menuItemB
+        };
+
+        console.log(this.state);
+    }
+
+    render() {
+
+        return (
+            <div className="row">
+                <div className="col-4">
+                    <h2>{this.props.title}</h2>
+                </div>
+
+                <div className="col-4">
+                    {this.state.menuItemLeft.map(item =>
+                        <MenuSelectionContainer
+                            itemTitle={item.itemTitle}
+                            itemDescription={item.itemDescription}
+                            itemId={item.id}
+                            key={item.id}
+                        />
+                    )}
+                </div>
+
+                <div className="col-4">
+                    {this.state.menuItemsRight.map(item =>
+                        <MenuSelectionContainer
+                            itemTitle={item.itemTitle}
+                            itemDescription={item.itemDescription}
+                            itemId={item.id}
+                            key={item.id}
+                        />
+                    )}
+                </div>
+            </div>
+        );
+    }
 }
 
 export default OrderFrame;

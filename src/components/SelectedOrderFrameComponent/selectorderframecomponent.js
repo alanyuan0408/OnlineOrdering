@@ -5,25 +5,24 @@ import SelectedOrderContainer from '../SelectedOrderComponent/selectedOrderConta
 
 class SelectedOrderFrame extends Component {
 
-  render() {
-    return (
-      <div>
-          <p>Selected Items:</p>
-            {this.props.orders.map(item =>
-              <SelectedOrderContainer
-                itemId={item.itemId}
-                itemTitle={item.itemTitle}
-                itemDescription={item.itemDescription}
-                key = {item.itemId}
-              />
-            )}
+    render() {
+        return (
+            <div>
+                <p>Selected Items:</p>
 
-          <button onClick= {this.props.clearOrders}>Clear Orders</button>
-          <br></br>
-      </div>
-    );
+                {this.props.orders.map(item =>
+                    <SelectedOrderContainer
+                        itemId={item.itemId}
+                        itemTitle={item.itemTitle}
+                        itemDescription={item.itemDescription}
+                        key = {item.itemId}
+                    />
+                )}
 
-  }
+                <button onClick= {this.props.clearOrders}>Clear Orders</button>
+            </div>
+        );
+    }
 }
 
 export default SelectedOrderFrame;

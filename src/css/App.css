@@ -20,10 +20,6 @@
     padding: 40px;
 }
 
-.App-intro {
-    font-size: large;
-}
-
 .App-footer {
     background-color: #222;
     height: 80px;
@@ -38,10 +34,6 @@
 
 .footer-text {
     font-size: 1em;
-}
-
-.menu-title {
-    font-size: 1.75em;
 }
 
 .menu-selection {
