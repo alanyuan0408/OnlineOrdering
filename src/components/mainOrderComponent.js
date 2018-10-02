@@ -8,6 +8,15 @@ import OrderFrameContainer from './OrderFrameComponent/orderFrameContainer'
 
 class MainOrderComponent extends Component {
 
+	constructor(props) {
+    super(props);
+
+    this.state = {
+        AwsBaseUrl: process.env.REACT_APP_AWS_BASE_URL
+    }
+
+  	};
+
 	render() {
     	return (
     		<div>

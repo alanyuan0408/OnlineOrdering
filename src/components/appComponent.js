@@ -26,21 +26,24 @@ class App extends Component {
         <div>
             <AppHeader headerTitle = { this.state.title } />
 
-            <div className="OrderFrame">
+            <div className="mainFrame">
 
-                <div className="container-large">
+                <div className="OrderFrame">
 
-                    <div className="row">
-                        <div className="col-9">
-                            <div className="container-large">
-                                <NavComponent />
+                    <div className="container-large">
 
-                                <MainOrderComponent />
+                        <div className="row">
+                            <div className="col-9">
+                                <div className="container-large">
+                                    <NavComponent />
+
+                                    <MainOrderComponent />
+                                </div>
                             </div>
-                        </div>
 
-                        <div className="col-3">
-                            <SelectOrderFrameContainer />
+                            <div className="col-3">
+                                <SelectOrderFrameContainer />
+                            </div>
                         </div>
                     </div>
                 </div>

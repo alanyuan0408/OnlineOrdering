@@ -32,6 +32,7 @@
     bottom: 0;
     width: 100%;
     padding: 20px;
+    margin-top: 25px;
     text-align: center;
 }
 
@@ -50,7 +51,13 @@
     position: relative;
 }
 
-.OrderFrame {
-    height: calc(100vh - 245px);
+.mainFrame {
+    height: calc(100vh - 270px);
     overflow-y: scroll;
+}
+
+.OrderFrame {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
