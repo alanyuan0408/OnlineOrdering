@@ -6,7 +6,7 @@ class MenuSelection extends Component {
     constructor(props) {
         super(props);
 
-        this.state ={
+        this.state = {
             selectedValue: 0
         }
 

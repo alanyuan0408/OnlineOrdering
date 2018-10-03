@@ -11,24 +11,25 @@ const mapStateToProps = (state, props) => {
 		itemTitle: order.itemTitle,
 		itemId: order.itemId
 	};
-  return defaultState;
+    return defaultState;
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    deleteOrder: article => dispatch(deleteOrder(article))
-  };
+    return {
+        deleteOrder: article => dispatch(deleteOrder(article))
+    };
 };
 
 const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
     return {
-      ...propsFromState,
-      ...ownProps,
-      deleteOrder: () => {
-        propsFromDispatch.deleteOrder(propsFromState.itemId)
-      }
+        ...propsFromState,
+        ...ownProps,
+        deleteOrder: () => {
+            propsFromDispatch.deleteOrder(propsFromState.itemId)
+        }
     };
 };
+
 const selectedOrderContainer = connect(mapStateToProps, mapDispatchToProps, mergeProps)(SelectedOrder);
 
 export default selectedOrderContainer;

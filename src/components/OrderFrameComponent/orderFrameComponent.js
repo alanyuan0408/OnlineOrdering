@@ -8,23 +8,39 @@ class OrderFrame extends Component {
     constructor(props) {
         super(props);
 
+        console.log(props)
+
+        this.state = {
+            menuItemLeft: [],
+            menuItemsRight: []
+        }
+
+        this.splitItems = this.splitItems.bind(this);
+    }
+
+    componentDidMount(props) {
+        console.log(props);
+        this.splitItems(props.menuItems);
+    }
+
+    splitItems(menuItems) {
         var menuItemA = [];
         var menuItemB =[];
         var itr = 0;
 
-        for (var item in props.menuItems) {
+        for (var item in menuItems) {
             if (itr % 2 == 0) {
-                menuItemA.push(props.menuItems[itr]);
+                menuItemA.push(menuItems[itr]);
             } else {
-                menuItemB.push(props.menuItems[itr]);
+                menuItemB.push(menuItems[itr]);
             }
             itr += 1
         }
 
-        this.state = {
+        this.setstate({
             menuItemLeft: menuItemA,
             menuItemsRight: menuItemB
-        };
+        });
 
         console.log(this.state);
     }

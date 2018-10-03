@@ -15,7 +15,7 @@ class App extends Component {
 
     this.state = {
         title: "Online Ordering App",
-        AwsBaseUrl: process.env.REACT_APP_AWS_BASE_URL
+        AwsBaseAssetUrl: process.env.REACT_APP_AWS_BASE_URL
     }
 
   };

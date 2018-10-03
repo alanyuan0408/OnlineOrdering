@@ -37,10 +37,7 @@
 }
 
 .menu-selection {
-    border-color: black;
-    width: 30vw;
-    left: 35vw;
-    position: relative;
+    margin-bottom: 15px;
 }
 
 .mainFrame {
