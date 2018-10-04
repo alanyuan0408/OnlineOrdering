@@ -36,6 +36,8 @@ class App extends Component {
                             <div className="col-9">
                                 <div className="container-large">
                                     <NavComponent />
+                                    
+                                    <br/>
 
                                     <MainOrderComponent />
                                 </div>

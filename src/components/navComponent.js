@@ -11,13 +11,26 @@ class NavComponent extends Component {
     // Header Component, top bar of the app
     render() {
         return (
-            <Breadcrumb>
-                <Breadcrumb.Item active><Link to={ PizzaInfo.Route } >Pizza Menu </Link></Breadcrumb.Item>
-                <Breadcrumb.Item ><Link to={ DrinkInfo.Route }>Drinks Menu </Link></Breadcrumb.Item>
-                <Breadcrumb.Item ><Link to={ SideItemInfo.Route }>Sides Menu </Link></Breadcrumb.Item>
-            </Breadcrumb>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Menu Navigation Bar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         );
     }
 }
 
 export default NavComponent;
+
